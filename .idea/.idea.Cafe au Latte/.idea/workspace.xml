@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9753952-9bb3-4604-9d3d-d08d81059e6d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cafe au Latte/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cafe au Latte/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cafe au Latte/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cafe au Latte/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,19 +38,41 @@
       <file leaf-file-name="RayShooter.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/RayShooter.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="843">
-              <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+            <state relative-caret-position="873">
+              <caret line="134" column="38" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
               <folding>
-                <marker date="1544610009345" expanded="false" signature="6:78" ph="..." />
-                <marker date="1544610009345" expanded="true" signature="119:1871" ph="{...}" />
-                <marker date="1544610009345" expanded="true" signature="355:413" ph="{...}" />
-                <marker date="1544610009345" expanded="true" signature="432:1869" ph="{...}" />
-                <marker date="1544610009345" expanded="true" signature="679:1866" ph="{...}" />
-                <marker date="1544610009345" expanded="true" signature="922:1184" ph="{...}" />
-                <marker date="1544610009345" expanded="true" signature="1192:1229" ph="{...}" />
-                <marker date="1544610009345" expanded="true" signature="1311:1448" ph="{...}" />
-                <marker date="1544610009345" expanded="true" signature="1456:1493" ph="{...}" />
-                <marker date="1544610009345" expanded="true" signature="1626:1862" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="6:100" ph="..." />
+                <marker date="1544619715116" expanded="true" signature="141:4644" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="656:714" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="733:4642" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="980:3650" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="1145:1232" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="1240:1277" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="1359:1446" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="1454:1491" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="1707:1794" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="1802:1839" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="2062:2150" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="2155:2214" ph="/* Radio Controls ... */" />
+                <marker date="1544619715116" expanded="true" signature="2297:2739" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="2334:2373" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="2495:2570" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="2630:2705" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="2835:3277" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="2872:2911" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="3033:3108" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="3168:3243" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="3416:3463" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="3599:3646" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="3694:4459" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="3702:3779" ph="/* This makes sure we dont play a song in the array ... */" />
+                <marker date="1544619715116" expanded="true" signature="3810:3845" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="3879:3914" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="3923:4029" ph="/* This changes to the next song if the current one is done ... */" />
+                <marker date="1544619715116" expanded="true" signature="4087:4227" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="4287:4427" ph="{...}" />
+                <marker date="1544619715116" expanded="true" signature="4463:4552" ph="/* Used for testing if the clip is properly started once ... */" />
+                <marker date="1544619715116" expanded="true" signature="4587:4639" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -218,12 +236,12 @@
       <option name="presentableId" value="Default" />
       <updated>1544559437273</updated>
       <workItem from="1544559441143" duration="811000" />
-      <workItem from="1544604088066" duration="5916000" />
+      <workItem from="1544604088066" duration="9807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6727000" />
+    <option name="totallyTimeSpent" value="10618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -329,19 +347,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/RayShooter.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
-          <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+        <state relative-caret-position="873">
+          <caret line="134" column="38" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
           <folding>
-            <marker date="1544610009345" expanded="false" signature="6:78" ph="..." />
-            <marker date="1544610009345" expanded="true" signature="119:1871" ph="{...}" />
-            <marker date="1544610009345" expanded="true" signature="355:413" ph="{...}" />
-            <marker date="1544610009345" expanded="true" signature="432:1869" ph="{...}" />
-            <marker date="1544610009345" expanded="true" signature="679:1866" ph="{...}" />
-            <marker date="1544610009345" expanded="true" signature="922:1184" ph="{...}" />
-            <marker date="1544610009345" expanded="true" signature="1192:1229" ph="{...}" />
-            <marker date="1544610009345" expanded="true" signature="1311:1448" ph="{...}" />
-            <marker date="1544610009345" expanded="true" signature="1456:1493" ph="{...}" />
-            <marker date="1544610009345" expanded="true" signature="1626:1862" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="6:100" ph="..." />
+            <marker date="1544619715116" expanded="true" signature="141:4644" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="656:714" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="733:4642" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="980:3650" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="1145:1232" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="1240:1277" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="1359:1446" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="1454:1491" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="1707:1794" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="1802:1839" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="2062:2150" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="2155:2214" ph="/* Radio Controls ... */" />
+            <marker date="1544619715116" expanded="true" signature="2297:2739" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="2334:2373" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="2495:2570" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="2630:2705" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="2835:3277" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="2872:2911" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="3033:3108" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="3168:3243" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="3416:3463" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="3599:3646" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="3694:4459" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="3702:3779" ph="/* This makes sure we dont play a song in the array ... */" />
+            <marker date="1544619715116" expanded="true" signature="3810:3845" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="3879:3914" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="3923:4029" ph="/* This changes to the next song if the current one is done ... */" />
+            <marker date="1544619715116" expanded="true" signature="4087:4227" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="4287:4427" ph="{...}" />
+            <marker date="1544619715116" expanded="true" signature="4463:4552" ph="/* Used for testing if the clip is properly started once ... */" />
+            <marker date="1544619715116" expanded="true" signature="4587:4639" ph="{...}" />
           </folding>
         </state>
       </provider>
