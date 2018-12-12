@@ -8,12 +8,6 @@ public class TimeController : MonoBehaviour
 	public GameObject[] LampLights;
 	public GameObject SunRays;
 	
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update ()
 	{
 		// We get the user's system date format and convert it

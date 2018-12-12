@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class RayShooter : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class RayShooter : MonoBehaviour
 	public AudioSource RadioAudioSource;
 	public AudioClip[] Channel1Music;
 	public AudioClip[] Channel2Music;
+	private List<int> _playedSongsIndexes = new List<int>();
 	
 	void Start ()
 	{
@@ -85,6 +87,23 @@ public class RayShooter : MonoBehaviour
 			if (Input.GetMouseButtonDown(0) &&
 			    hit.transform.name == "Next Channel")
 			{
+				int newSongIndex = Random.Range(0, 2);
+				// If the list of played songs in the channel is full
+				// (every song is already played once) then we reset it.
+				if (_playedSongsIndexes.Count >= 2)
+				{
+					_playedSongsIndexes.Clear();
+					Debug.Log("Cleared List");
+				}
+				// If this song in the channel has already been played
+				// then we want to pick another one instead of the same one
+				// multiple times in a row...
+				while (_playedSongsIndexes.Contains(newSongIndex))
+				{
+					newSongIndex = Random.Range(0, 2);
+				}
+				_playedSongsIndexes.Add(newSongIndex);
+				
 				if (_currentRadioIndex < 1)
 				{
 					_currentRadioIndex++;
@@ -93,15 +112,27 @@ public class RayShooter : MonoBehaviour
 				
 				if (_radioChannels[_currentRadioIndex] == "Channel 1")
 				{
-					RadioAudioSource.clip = Channel1Music[_currentSongIndex];
+					RadioAudioSource.clip = Channel1Music[newSongIndex];
 				} else if (_radioChannels[_currentRadioIndex] == "Channel 2")
 				{
-					RadioAudioSource.clip = Channel2Music[_currentSongIndex];
+					RadioAudioSource.clip = Channel2Music[newSongIndex];
 				}
 				RadioAudioSource.Play();
 			} else if (Input.GetMouseButtonDown(0) &&
 			           hit.transform.name == "Previous Channel")
 			{
+				int newSongIndex = Random.Range(0, 2);
+				if (_playedSongsIndexes.Count >= 2)
+				{
+					_playedSongsIndexes.Clear();
+					Debug.Log("Cleared List");
+				}
+				while (_playedSongsIndexes.Contains(newSongIndex))
+				{
+					newSongIndex = Random.Range(0, 2);
+				}
+				_playedSongsIndexes.Add(newSongIndex);
+				
 				if (_currentRadioIndex > 0)
 				{
 					_currentRadioIndex--;
@@ -110,10 +141,10 @@ public class RayShooter : MonoBehaviour
 				
 				if (_radioChannels[_currentRadioIndex] == "Channel 1")
 				{
-					RadioAudioSource.clip = Channel1Music[_currentSongIndex];
+					RadioAudioSource.clip = Channel1Music[newSongIndex];
 				} else if (_radioChannels[_currentRadioIndex] == "Channel 2")
 				{
-					RadioAudioSource.clip = Channel2Music[_currentSongIndex];
+					RadioAudioSource.clip = Channel2Music[newSongIndex];
 				}
 				RadioAudioSource.Play();
 			} else if (Input.GetMouseButtonDown(0) &&
@@ -133,10 +164,21 @@ public class RayShooter : MonoBehaviour
 		{
 			// This makes sure we dont play a song in the array
 			// that does not exist
-			if (_currentSongIndex == 1)
+			int newSongIndex = Random.Range(0, 2);
+			if (_playedSongsIndexes.Count >= 2)
+			{
+				_playedSongsIndexes.Clear();
+				Debug.Log("Cleared List");
+			}
+			while (_playedSongsIndexes.Contains(newSongIndex))
+			{
+				newSongIndex = Random.Range(0, 2);
+			}
+			
+			if (newSongIndex == 1)
 			{
 				_currentSongIndex--;
-			} else if (_currentRadioIndex >= 0)
+			} else if (newSongIndex >= 0)
 			{
 				_currentSongIndex++;
 			}
