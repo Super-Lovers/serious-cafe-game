@@ -34,7 +34,7 @@ public class RayShooter : MonoBehaviour
 		Ray ray = new Ray(_playerCamera.transform.position, _playerCamera.transform.forward);
 		RaycastHit hit;
 
-		if (Physics.Raycast(ray, out hit, InteractablesLayer))
+		if (Physics.Raycast(ray, out hit, 100, InteractablesLayer))
 		{
 			MeshRenderer interactableRenderer = hit.transform.GetComponent<MeshRenderer>();
 			

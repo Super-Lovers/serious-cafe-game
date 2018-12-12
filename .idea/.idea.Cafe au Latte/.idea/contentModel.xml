@@ -10,6 +10,7 @@
           <e p="PlayerController.cs" t="Include" />
           <e p="RayShooter.cs" t="Include" />
           <e p="TimeController.cs" t="Include" />
+          <e p="UIButtonBehaviour.cs" t="Include" />
         </e>
       </e>
       <e p="Cafe au Latte.sln" t="IncludeFlat" />
