@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9753952-9bb3-4604-9d3d-d08d81059e6d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cafe au Latte/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cafe au Latte/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UiButtonBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UiButtonBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -106,33 +103,37 @@
       <file leaf-file-name="UiButtonBehaviour.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/UiButtonBehaviour.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="77" column="49" selection-start-line="77" selection-start-column="49" selection-end-line="77" selection-end-column="49" />
+            <state relative-caret-position="333">
+              <caret line="142" column="45" selection-start-line="142" selection-start-column="45" selection-end-line="142" selection-end-column="45" />
               <folding>
-                <marker date="1544650514753" expanded="true" signature="6:100" ph="..." />
-                <marker date="1544650514753" expanded="true" signature="149:3676" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="280:392" ph="/* Check if the dependencies for a single coffee order ... */" />
-                <marker date="1544650514753" expanded="true" signature="582:638" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="657:3674" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="806:3148" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="869:1031" ph="/* If the button we are hovering over is not selected, then it ... */" />
-                <marker date="1544650514753" expanded="true" signature="1330:1597" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="1605:1754" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="1644:1749" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="1762:1820" ph="/* Sugar Selectors ... */" />
-                <marker date="1544650514753" expanded="true" signature="2105:2326" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="2334:2510" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="2400:2505" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="2518:2575" ph="/* Cream Selector ... */" />
-                <marker date="1544650514753" expanded="true" signature="2769:2990" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="2998:3144" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="3028:3139" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="3155:3187" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="3216:3441" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="3356:3437" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="3471:3517" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="3547:3594" ph="{...}" />
-                <marker date="1544650514753" expanded="true" signature="3624:3671" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="6:100" ph="..." />
+                <marker date="1544653988411" expanded="true" signature="149:5400" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="280:392" ph="/* Check if the dependencies for a single coffee order ... */" />
+                <marker date="1544653988411" expanded="true" signature="623:679" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="698:5329" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="869:4803" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="932:1094" ph="/* If the button we are hovering over is not selected, then it ... */" />
+                <marker date="1544653988411" expanded="true" signature="1393:1660" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="1668:1817" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="1707:1812" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="1825:1883" ph="/* Sugar Selectors ... */" />
+                <marker date="1544653988411" expanded="true" signature="2165:2386" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="2394:2570" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="2460:2565" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="2578:2635" ph="/* Cream Selector ... */" />
+                <marker date="1544653988411" expanded="true" signature="2829:3050" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="3058:3204" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="3088:3199" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="3212:3437" ph="/* Completing the coffee request ... */" />
+                <marker date="1544653988411" expanded="true" signature="3580:4799" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="3590:3709" ph="/* This resets the selector indicator in the name ... */" />
+                <marker date="1544653988411" expanded="true" signature="4810:4842" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="4871:5096" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="5011:5092" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="5126:5172" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="5202:5249" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="5279:5326" ph="{...}" />
+                <marker date="1544653988411" expanded="true" signature="5363:5398" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -328,12 +329,12 @@
       <option name="presentableId" value="Default" />
       <updated>1544559437273</updated>
       <workItem from="1544559441143" duration="811000" />
-      <workItem from="1544604088066" duration="22920000" />
+      <workItem from="1544604088066" duration="24484000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23731000" />
+    <option name="totallyTimeSpent" value="25295000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -350,13 +351,13 @@
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Errors In Solution" order="3" visible="true" weight="0.16791044" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3297414" />
       <window_info anchor="bottom" id="Unit Tests" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49784482" visible="true" weight="0.16257995" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49784482" visible="true" weight="0.16257995" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unity" order="7" />
       <window_info anchor="right" id="Database" order="3" />
@@ -524,33 +525,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/UiButtonBehaviour.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="77" column="49" selection-start-line="77" selection-start-column="49" selection-end-line="77" selection-end-column="49" />
+        <state relative-caret-position="333">
+          <caret line="142" column="45" selection-start-line="142" selection-start-column="45" selection-end-line="142" selection-end-column="45" />
           <folding>
-            <marker date="1544650514753" expanded="true" signature="6:100" ph="..." />
-            <marker date="1544650514753" expanded="true" signature="149:3676" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="280:392" ph="/* Check if the dependencies for a single coffee order ... */" />
-            <marker date="1544650514753" expanded="true" signature="582:638" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="657:3674" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="806:3148" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="869:1031" ph="/* If the button we are hovering over is not selected, then it ... */" />
-            <marker date="1544650514753" expanded="true" signature="1330:1597" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="1605:1754" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="1644:1749" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="1762:1820" ph="/* Sugar Selectors ... */" />
-            <marker date="1544650514753" expanded="true" signature="2105:2326" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="2334:2510" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="2400:2505" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="2518:2575" ph="/* Cream Selector ... */" />
-            <marker date="1544650514753" expanded="true" signature="2769:2990" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="2998:3144" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="3028:3139" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="3155:3187" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="3216:3441" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="3356:3437" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="3471:3517" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="3547:3594" ph="{...}" />
-            <marker date="1544650514753" expanded="true" signature="3624:3671" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="6:100" ph="..." />
+            <marker date="1544653988411" expanded="true" signature="149:5400" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="280:392" ph="/* Check if the dependencies for a single coffee order ... */" />
+            <marker date="1544653988411" expanded="true" signature="623:679" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="698:5329" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="869:4803" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="932:1094" ph="/* If the button we are hovering over is not selected, then it ... */" />
+            <marker date="1544653988411" expanded="true" signature="1393:1660" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="1668:1817" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="1707:1812" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="1825:1883" ph="/* Sugar Selectors ... */" />
+            <marker date="1544653988411" expanded="true" signature="2165:2386" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="2394:2570" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="2460:2565" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="2578:2635" ph="/* Cream Selector ... */" />
+            <marker date="1544653988411" expanded="true" signature="2829:3050" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="3058:3204" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="3088:3199" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="3212:3437" ph="/* Completing the coffee request ... */" />
+            <marker date="1544653988411" expanded="true" signature="3580:4799" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="3590:3709" ph="/* This resets the selector indicator in the name ... */" />
+            <marker date="1544653988411" expanded="true" signature="4810:4842" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="4871:5096" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="5011:5092" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="5126:5172" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="5202:5249" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="5279:5326" ph="{...}" />
+            <marker date="1544653988411" expanded="true" signature="5363:5398" ph="{...}" />
           </folding>
         </state>
       </provider>

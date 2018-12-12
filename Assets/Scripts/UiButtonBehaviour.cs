@@ -13,6 +13,8 @@ public class UiButtonBehaviour : MonoBehaviour {
 	// are met and if not then you can keep selecting items.
 	private bool _isCafeSelected = false;
 	private bool _isSugarSelected = false;
+	private bool _isRequestComplete = true;
+	private float _timeToRequestCompletion = 5f;
 
 	private Image _cafeSelected;
 	private Image _sugarSelected;
@@ -25,7 +27,7 @@ public class UiButtonBehaviour : MonoBehaviour {
 	void Update () {
 		Ray ray = new Ray(_playerCamera.transform.position, _playerCamera.transform.forward);
 
-		if (Physics.Raycast(ray, out _hit, 100, UiButtonsLayer))
+		if (Physics.Raycast(ray, out _hit, 100, UiButtonsLayer) && _isRequestComplete)
 		{
 			Image image = _hit.transform.GetComponent<Image>();
 			// If the button we are hovering over is not selected, then it
@@ -107,6 +109,40 @@ public class UiButtonBehaviour : MonoBehaviour {
 					_isHovering = true;
 				}
 			}
+			
+			// *************
+			// Completing the coffee request
+			// *************
+			// If the players clicks to finish a request and every dependant
+			// selection is complete, then we can finish the order and reset everything back.
+			if (Input.GetMouseButton(0) && _hit.transform.name == "Make The Coffee Button" &&
+			    _cafeSelected && _sugarSelected && _creamSelected)
+			{
+				// This resets the selector indicator in the name
+				// of the existing selected buttons and restoring their coloring.
+				GameObject _cafeButtonSelected = GameObject.Find(_cafeSelected.transform.name);
+				_cafeButtonSelected.name = _cafeButtonSelected.name.Substring(0, _cafeButtonSelected.name.Length - 2);
+				_cafeButtonSelected.GetComponent<Image>().color = Color.white;
+				
+				GameObject _sugarButtonSelected = GameObject.Find(_sugarSelected.transform.name);
+				_sugarButtonSelected.name = _sugarButtonSelected.name.Substring(0, _sugarButtonSelected.name.Length - 2);
+				_sugarButtonSelected.GetComponent<Image>().color = Color.white;
+				
+				GameObject _creamButtonSelected = GameObject.Find(_creamSelected.transform.name);
+				_creamButtonSelected.name = _creamButtonSelected.name.Substring(0, _creamButtonSelected.name.Length - 2);
+				_creamButtonSelected.GetComponent<Image>().color = Color.white;
+				
+				_isCafeSelected = false;
+				_isSugarSelected = false;
+
+				_cafeSelected = null;
+				_sugarSelected = null;
+				_creamSelected = null;
+				
+				// Begin the process of the request being processed by the machine
+				_isRequestComplete = false;
+				Invoke("CompletedRequest", _timeToRequestCompletion);
+			}
 		}
 		else
 		{
@@ -135,5 +171,10 @@ public class UiButtonBehaviour : MonoBehaviour {
 		{
 			_creamSelected.color = Color.green;
 		}
+	}
+
+	private void CompletedRequest()
+	{
+		_isRequestComplete = true;
 	}
 }

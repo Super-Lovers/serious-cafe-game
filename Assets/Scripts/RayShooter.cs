@@ -93,7 +93,7 @@ public class RayShooter : MonoBehaviour
 				if (_playedSongsIndexes.Count >= 2)
 				{
 					_playedSongsIndexes.Clear();
-					Debug.Log("Cleared List");
+					//Debug.Log("Cleared List");
 				}
 				// If this song in the channel has already been played
 				// then we want to pick another one instead of the same one
@@ -125,7 +125,7 @@ public class RayShooter : MonoBehaviour
 				if (_playedSongsIndexes.Count >= 2)
 				{
 					_playedSongsIndexes.Clear();
-					Debug.Log("Cleared List");
+					//Debug.Log("Cleared List");
 				}
 				while (_playedSongsIndexes.Contains(newSongIndex))
 				{
@@ -168,7 +168,7 @@ public class RayShooter : MonoBehaviour
 			if (_playedSongsIndexes.Count >= 2)
 			{
 				_playedSongsIndexes.Clear();
-				Debug.Log("Cleared List");
+				//Debug.Log("Cleared List");
 			}
 			while (_playedSongsIndexes.Contains(newSongIndex))
 			{
@@ -188,11 +188,11 @@ public class RayShooter : MonoBehaviour
 			if (_radioChannels[_currentRadioIndex] == "Channel 1")
 			{
 				RadioAudioSource.clip = Channel1Music[_currentSongIndex];
-				Debug.Log("Current song: " + Channel1Music[_currentSongIndex]);
+				//Debug.Log("Current song: " + Channel1Music[_currentSongIndex]);
 			} else if (_radioChannels[_currentRadioIndex] == "Channel 2")
 			{
 				RadioAudioSource.clip = Channel2Music[_currentSongIndex];
-				Debug.Log("Current song: " + Channel2Music[_currentSongIndex]);
+				//Debug.Log("Current song: " + Channel2Music[_currentSongIndex]);
 			}
 			RadioAudioSource.Play();
 		}
