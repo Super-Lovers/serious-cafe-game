@@ -305,7 +305,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creme
+  m_Text: Cream
 --- !u!222 &8444018
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1519,6 +1519,9 @@ MonoBehaviour:
   UiButtonsLayer:
     serializedVersion: 2
     m_Bits: 1024
+  CafeSelected: {fileID: 0}
+  SugarSelected: {fileID: 0}
+  CreamSelected: {fileID: 0}
 --- !u!1 &393063764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,7 +1969,7 @@ GameObject:
   - component: {fileID: 440005606}
   - component: {fileID: 440005609}
   m_Layer: 10
-  m_Name: Creme
+  m_Name: Cream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3767,7 +3770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 954369296}
   m_Layer: 5
-  m_Name: Creme
+  m_Name: Cream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3944,7 +3947,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Cafe 2
 --- !u!222 &978456717
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4730,7 +4733,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Cafe 3
 --- !u!222 &1260161154
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7393,7 +7396,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Cafe 1
 --- !u!222 &1979531944
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7523,7 +7526,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Cafe 4
 --- !u!222 &2006058395
 CanvasRenderer:
   m_ObjectHideFlags: 0
