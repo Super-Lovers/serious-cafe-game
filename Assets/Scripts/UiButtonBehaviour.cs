@@ -13,7 +13,7 @@ public class UiButtonBehaviour : MonoBehaviour {
 	// are met and if not then you can keep selecting items.
 	private bool _isCafeSelected = false;
 	private bool _isSugarSelected = false;
-	private bool _isRequestComplete = true;
+	public static bool IsRequestComplete = true;
 	private float _timeToRequestCompletion = 5f;
 
 	private Image _cafeSelected;
@@ -27,7 +27,8 @@ public class UiButtonBehaviour : MonoBehaviour {
 	void Update () {
 		Ray ray = new Ray(_playerCamera.transform.position, _playerCamera.transform.forward);
 
-		if (Physics.Raycast(ray, out _hit, 100, UiButtonsLayer) && _isRequestComplete)
+		if (Physics.Raycast(ray, out _hit, 100, UiButtonsLayer) &&
+		    IsRequestComplete && CoffeeMachine.IsBasketFull == false)
 		{
 			Image image = _hit.transform.GetComponent<Image>();
 			// If the button we are hovering over is not selected, then it
@@ -38,8 +39,8 @@ public class UiButtonBehaviour : MonoBehaviour {
 			// *************
 			if (Input.GetMouseButton(0) && _isCafeSelected == false &&
 			    _hit.transform.name[_hit.transform.name.Length - 1] != 'S' &&
-			    (_hit.transform.name == "Cafe 1" ||
-			    _hit.transform.name == "Cafe 2" ||
+			    (_hit.transform.name == "Latte" ||
+			    _hit.transform.name == "Espresso" ||
 			    _hit.transform.name == "Cafe 3" ||
 			    _hit.transform.name == "Cafe 4"))
 			{
@@ -140,8 +141,8 @@ public class UiButtonBehaviour : MonoBehaviour {
 				_creamSelected = null;
 				
 				// Begin the process of the request being processed by the machine
-				_isRequestComplete = false;
-				Invoke("CompletedRequest", _timeToRequestCompletion);
+				IsRequestComplete = false;
+				//Invoke("CompletedRequest", _timeToRequestCompletion);
 			}
 		}
 		else
@@ -175,6 +176,6 @@ public class UiButtonBehaviour : MonoBehaviour {
 
 	private void CompletedRequest()
 	{
-		_isRequestComplete = true;
+		IsRequestComplete = true;
 	}
 }

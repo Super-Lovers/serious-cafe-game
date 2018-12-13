@@ -7,6 +7,7 @@
         <e p="Scripts" t="Include">
           <e p="BellCounter.cs" t="Include" />
           <e p="ButtonController.cs" t="Include" />
+          <e p="CoffeeMachine.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="RayShooter.cs" t="Include" />
           <e p="TimeController.cs" t="Include" />
