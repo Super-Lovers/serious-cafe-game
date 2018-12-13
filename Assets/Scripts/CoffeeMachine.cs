@@ -14,6 +14,13 @@ public class CoffeeMachine : MonoBehaviour
 	public GameObject SecondSpot;
 	public GameObject ThirdSpot;
 	public GameObject FourthSpot;
+	
+	// Indicator materials
+	public GameObject Indicator;
+	private MeshRenderer _indicatorRenderer;
+	public Material IndicatorIdle;
+	public Material IndicatorWorking;
+	public Material IndicatorDone;
 
 	private bool _isFirstStageComplete = false;
 	public GameObject LiquidInCupPrefab;
@@ -33,7 +40,12 @@ public class CoffeeMachine : MonoBehaviour
 	public float SecondsToThirdStageCompletion;
 
 	public static bool IsBasketFull = false;
-	
+
+	private void Start()
+	{
+		_indicatorRenderer = Indicator.GetComponent<MeshRenderer>();
+	}
+
 	void Update () {
 		if (UiButtonBehaviour.IsRequestComplete == false)
 		{
@@ -41,6 +53,8 @@ public class CoffeeMachine : MonoBehaviour
 			    _canGoToNextStage) // First stage
 			{
 				CoffeeInMaking = Instantiate(CoffeeCupPrefab);
+				// Once the machine starts working we indicate immediately.
+				_indicatorRenderer.material = IndicatorWorking;
 
 				MoveCoffeeToFirstStage();
 			}
@@ -119,6 +133,9 @@ public class CoffeeMachine : MonoBehaviour
 		_isFirstStageComplete = false;
 		_isSecondStageComplete = false;
 		_isThirdStageComplete = false;
+		
+		_indicatorRenderer.material = IndicatorDone;
+		Invoke("IndicatorReset", 5f);
 	}
 
 	private void UpdateCoffeePosition(GameObject stage, string stageToComplete)
@@ -173,5 +190,10 @@ public class CoffeeMachine : MonoBehaviour
 		_isThirdStageComplete = true;
 		
 		_canGoToNextStage = true;
+	}
+
+	private void IndicatorReset()
+	{
+		_indicatorRenderer.material = IndicatorIdle;
 	}
 }
