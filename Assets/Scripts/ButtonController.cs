@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonController : MonoBehaviour {
-    public Material DefaultButtonMaterial;
+    public Material HoveredButton;
 
-    private void Update()
+    public void HighlightButton()
     {
-        if (RayShooter.EnteredButton == false)
-        {
-            GetComponent<MeshRenderer>().material = DefaultButtonMaterial;
-        }
+        GetComponent<MeshRenderer>().material = HoveredButton;
     }
 }

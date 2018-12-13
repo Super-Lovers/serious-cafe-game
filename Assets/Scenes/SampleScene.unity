@@ -1071,8 +1071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d576d2dd69fcf0746971507f6394736a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultButtonMaterial: {fileID: 2100000, guid: 920c7afd5ce5ece47b3609b21e0c7179,
-    type: 2}
+  HoveredButton: {fileID: 2100000, guid: 0768d51924961d54597ce485c15c6577, type: 2}
 --- !u!65 &157254887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1617,8 +1616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d576d2dd69fcf0746971507f6394736a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultButtonMaterial: {fileID: 2100000, guid: 920c7afd5ce5ece47b3609b21e0c7179,
-    type: 2}
+  HoveredButton: {fileID: 2100000, guid: 0768d51924961d54597ce485c15c6577, type: 2}
 --- !u!1 &315623731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,7 +2007,8 @@ MonoBehaviour:
   InteractablesLayer:
     serializedVersion: 2
     m_Bits: 512
-  HoveredButton: {fileID: 2100000, guid: 0768d51924961d54597ce485c15c6577, type: 2}
+  DefaultButtonMaterial: {fileID: 2100000, guid: 920c7afd5ce5ece47b3609b21e0c7179,
+    type: 2}
   ClickedButton: {fileID: 2100000, guid: cf9443a6db7383b48aee7a60ae53fafb, type: 2}
   RadioLabel: {fileID: 1977147431}
   RadioAudioSource: {fileID: 434168284}
@@ -2443,7 +2442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &434168283
 Transform:
   m_ObjectHideFlags: 0
@@ -2720,8 +2719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d576d2dd69fcf0746971507f6394736a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultButtonMaterial: {fileID: 2100000, guid: 920c7afd5ce5ece47b3609b21e0c7179,
-    type: 2}
+  HoveredButton: {fileID: 2100000, guid: 0768d51924961d54597ce485c15c6577, type: 2}
 --- !u!65 &440103845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7256,8 +7254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d576d2dd69fcf0746971507f6394736a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultButtonMaterial: {fileID: 2100000, guid: 920c7afd5ce5ece47b3609b21e0c7179,
-    type: 2}
+  HoveredButton: {fileID: 2100000, guid: 0768d51924961d54597ce485c15c6577, type: 2}
 --- !u!1 &1881847099
 GameObject:
   m_ObjectHideFlags: 0

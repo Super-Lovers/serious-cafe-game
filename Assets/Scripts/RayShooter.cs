@@ -9,8 +9,8 @@ public class RayShooter : MonoBehaviour
 {
 	private Camera _playerCamera;
 	public LayerMask InteractablesLayer;
+	public Material DefaultButtonMaterial;
 
-	public Material HoveredButton;
 	public Material ClickedButton;
 	public static bool EnteredButton = false;
 	private bool _isButtonClicked = false;
@@ -37,38 +37,14 @@ public class RayShooter : MonoBehaviour
 		if (Physics.Raycast(ray, out hit, 100, InteractablesLayer))
 		{
 			MeshRenderer interactableRenderer = hit.transform.GetComponent<MeshRenderer>();
-			
-			if (hit.transform.name == "Next Channel" && _isButtonClicked == false)
-			{
-				interactableRenderer.material = HoveredButton;
-				EnteredButton = true;
-			}
-			else
-			{
-				EnteredButton = false;
-			}
-			
-			if (hit.transform.name == "Previous Channel" && _isButtonClicked == false)
-			{
-				interactableRenderer.material = HoveredButton;
-				EnteredButton = true;
-			}
-			else
-			{
-				EnteredButton = false;
-			}
 
 			if (hit.transform.name == "Previous Channel" ||
 			    hit.transform.name == "Next Channel" ||
 			    hit.transform.name == "Volume Down" ||
 			    hit.transform.name == "Volume Up" && _isButtonClicked == false)
 			{
-				interactableRenderer.material = HoveredButton;
-				EnteredButton = true;
-			}
-			else
-			{
-				EnteredButton = false;
+				hit.transform.GetComponent<ButtonController>().HighlightButton();
+				Debug.Log("aah");
 			}
 
 			if (Input.GetMouseButton(0) &&
@@ -157,6 +133,19 @@ public class RayShooter : MonoBehaviour
 			           RadioAudioSource.volume <= 1f)
 			{
 				RadioAudioSource.volume += 0.1f;
+			}
+		}
+		else
+		{
+			List<GameObject> buttons = new List<GameObject>();
+			buttons.Add(GameObject.Find("Next Channel"));
+			buttons.Add(GameObject.Find("Previous Channel"));
+			buttons.Add(GameObject.Find("Volume Up"));
+			buttons.Add(GameObject.Find("Volume Down"));
+
+			foreach (GameObject button in buttons)
+			{
+				button.GetComponent<MeshRenderer>().material = DefaultButtonMaterial;
 			}
 		}
 
