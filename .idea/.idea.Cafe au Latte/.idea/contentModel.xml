@@ -5,9 +5,10 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="BellCounter.cs" t="Include" />
           <e p="ButtonController.cs" t="Include" />
           <e p="CoffeeMachine.cs" t="Include" />
+          <e p="CustomerController.cs" t="Include" />
+          <e p="CustomerGenerator.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="RayShooter.cs" t="Include" />
           <e p="TimeController.cs" t="Include" />

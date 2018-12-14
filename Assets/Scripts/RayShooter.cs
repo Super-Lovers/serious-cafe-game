@@ -44,7 +44,6 @@ public class RayShooter : MonoBehaviour
 			    hit.transform.name == "Volume Up" && _isButtonClicked == false)
 			{
 				hit.transform.GetComponent<ButtonController>().HighlightButton();
-				Debug.Log("aah");
 			}
 
 			if (Input.GetMouseButton(0) &&

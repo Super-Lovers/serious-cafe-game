@@ -95,9 +95,20 @@ public class CoffeeMachine : MonoBehaviour
 				{
 					MoveCoffeeToBasket(FourthSpot);
 					UiButtonBehaviour.IsRequestComplete = true;
-					IsBasketFull = true;
 				}
 			}
+		}
+		
+		if (FirstSpot.transform.childCount > 0 &&
+		    SecondSpot.transform.childCount > 0 &&
+		    ThirdSpot.transform.childCount > 0 &&
+		    FourthSpot.transform.childCount > 0)
+		{
+			IsBasketFull = true;
+		}
+		else
+		{
+			IsBasketFull = false;
 		}
 	}
 
