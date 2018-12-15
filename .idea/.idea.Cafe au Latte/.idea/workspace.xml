@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9753952-9bb3-4604-9d3d-d08d81059e6d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cafe au Latte/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cafe au Latte/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cafe au Latte/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cafe au Latte/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Customer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Customer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BellCounter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BellCounter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoffeeMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoffeeMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomerGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomerGenerator.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,40 +16,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CustomerGenerator.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CustomerGenerator.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/CustomerGenerator.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+            <state relative-caret-position="180">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
               <folding>
-                <marker date="1544791098602" expanded="false" signature="6:78" ph="..." />
-                <marker date="1544791098602" expanded="true" signature="127:1330" ph="{...}" />
-                <marker date="1544791098602" expanded="true" signature="130:234" ph="/* The timer is responsible for generating customer ... */" />
-                <marker date="1544791098602" expanded="true" signature="490:615" ph="{...}" />
-                <marker date="1544791098602" expanded="true" signature="634:1188" ph="{...}" />
-                <marker date="1544791098602" expanded="true" signature="660:1185" ph="{...}" />
-                <marker date="1544791098602" expanded="true" signature="714:805" ph="{...}" />
-                <marker date="1544791098602" expanded="true" signature="760:800" ph="{...}" />
-                <marker date="1544791098602" expanded="true" signature="1042:1119" ph="/* Resetting the interval to spawn a new customer after ... */" />
-                <marker date="1544791098602" expanded="true" signature="1218:1328" ph="{...}" />
-                <marker date="1544791098602" expanded="true" signature="1258:1281" ph="{...}" />
-                <marker date="1544791098602" expanded="true" signature="1288:1325" ph="{...}" />
+                <marker date="1544832235638" expanded="false" signature="6:78" ph="..." />
+                <marker date="1544832235638" expanded="true" signature="127:1348" ph="{...}" />
+                <marker date="1544832235638" expanded="true" signature="130:234" ph="/* The timer is responsible for generating customer ... */" />
+                <marker date="1544832235638" expanded="true" signature="524:633" ph="{...}" />
+                <marker date="1544832235638" expanded="true" signature="652:1206" ph="{...}" />
+                <marker date="1544832235638" expanded="true" signature="678:1203" ph="{...}" />
+                <marker date="1544832235638" expanded="true" signature="732:823" ph="{...}" />
+                <marker date="1544832235638" expanded="true" signature="778:818" ph="{...}" />
+                <marker date="1544832235638" expanded="true" signature="1060:1137" ph="/* Resetting the interval to spawn a new customer after ... */" />
+                <marker date="1544832235638" expanded="true" signature="1236:1346" ph="{...}" />
+                <marker date="1544832235638" expanded="true" signature="1276:1299" ph="{...}" />
+                <marker date="1544832235638" expanded="true" signature="1306:1343" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerController.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CustomerController.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/CustomerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            <state relative-caret-position="663">
+              <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
               <folding>
-                <marker date="1544785674975" expanded="false" signature="6:78" ph="..." />
-                <marker date="1544785674975" expanded="true" signature="127:639" ph="{...}" />
-                <marker date="1544785674975" expanded="true" signature="226:399" ph="{...}" />
-                <marker date="1544785674975" expanded="true" signature="418:425" ph="{...}" />
-                <marker date="1544785674975" expanded="true" signature="453:637" ph="{...}" />
+                <marker date="1544836250729" expanded="false" signature="6:78" ph="..." />
+                <marker date="1544836250729" expanded="true" signature="149:2320" ph="{...}" />
+                <marker date="1544836250729" expanded="true" signature="438:1003" ph="{...}" />
+                <marker date="1544836250729" expanded="true" signature="798:908" ph="/* We want the speech bubble to be visible only once the customer ... */" />
+                <marker date="1544836250729" expanded="true" signature="1022:1940" ph="{...}" />
+                <marker date="1544836250729" expanded="true" signature="1039:1369" ph="{...}" />
+                <marker date="1544836250729" expanded="true" signature="1047:1237" ph="/* We save the new vector3 position to the transform, thats why ... */" />
+                <marker date="1544836250729" expanded="true" signature="1450:1541" ph="{...}" />
+                <marker date="1544836250729" expanded="true" signature="1569:1937" ph="{...}" />
+                <marker date="1544836250729" expanded="true" signature="1655:1933" ph="/* For some reason the x axis of the speechbubble flips once it ... */" />
+                <marker date="1544836250729" expanded="true" signature="1943:2041" ph="/* You can use this if you want to make the customers teleport ... */" />
+                <marker date="1544836250729" expanded="true" signature="2068:2318" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -101,6 +104,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CustomerGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -112,10 +116,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UiButtonBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CoffeeMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CustomerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BellCounter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CustomerGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomerController.cs" />
       </list>
     </option>
   </component>
@@ -233,12 +237,12 @@
       <updated>1544559437273</updated>
       <workItem from="1544559441143" duration="811000" />
       <workItem from="1544604088066" duration="38502000" />
-      <workItem from="1544738297849" duration="7300000" />
+      <workItem from="1544738297849" duration="13155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46613000" />
+    <option name="totallyTimeSpent" value="52468000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -262,11 +266,11 @@
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="NuGet" order="12" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48814654" visible="true" weight="0.1641791" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4859914" visible="true" weight="0.1641791" />
       <window_info anchor="bottom" id="Unity" order="9" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info id="Structure" order="1" sideWeight="0.51185346" side_tool="true" visible="true" weight="0.1641791" />
+      <window_info id="Structure" order="1" sideWeight="0.51400864" side_tool="true" visible="true" weight="0.1641791" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -287,7 +291,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -399,41 +403,87 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/RayShooter.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
-          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CustomerController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
           <folding>
-            <marker date="1544785674975" expanded="false" signature="6:78" ph="..." />
-            <marker date="1544785674975" expanded="true" signature="127:639" ph="{...}" />
-            <marker date="1544785674975" expanded="true" signature="226:399" ph="{...}" />
-            <marker date="1544785674975" expanded="true" signature="418:425" ph="{...}" />
-            <marker date="1544785674975" expanded="true" signature="453:637" ph="{...}" />
+            <marker date="1544780486916" expanded="false" signature="6:149" ph="..." />
+            <marker date="1544780486916" expanded="true" signature="190:5829" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="771:829" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="848:5827" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="1100:4186" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="1403:1483" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="1706:1794" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="1799:1858" ph="/* Radio Controls ... */" />
+            <marker date="1544780486916" expanded="true" signature="1941:2967" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="1994:2108" ph="/* If the list of played songs in the channel is full ... */" />
+            <marker date="1544780486916" expanded="true" signature="2148:2228" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="2233:2385" ph="/* If this song in the channel has already been played ... */" />
+            <marker date="1544780486916" expanded="true" signature="2440:2492" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="2572:2611" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="2733:2803" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="2863:2933" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="3063:3813" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="3151:3231" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="3286:3338" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="3418:3457" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="3579:3649" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="3709:3779" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="3952:3999" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="4135:4182" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="4193:4578" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="4490:4574" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="4622:5644" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="4630:4707" ph="/* This makes sure we dont play a song in the array ... */" />
+            <marker date="1544780486916" expanded="true" signature="4788:4864" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="4918:4967" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="4997:5032" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="5060:5095" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="5104:5210" ph="/* This changes to the next song if the current one is done ... */" />
+            <marker date="1544780486916" expanded="true" signature="5268:5410" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="5470:5612" ph="{...}" />
+            <marker date="1544780486916" expanded="true" signature="5648:5737" ph="/* Used for testing if the clip is properly started once ... */" />
+            <marker date="1544780486916" expanded="true" signature="5772:5824" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/CustomerGenerator.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+        <state relative-caret-position="180">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding>
-            <marker date="1544791098602" expanded="false" signature="6:78" ph="..." />
-            <marker date="1544791098602" expanded="true" signature="127:1330" ph="{...}" />
-            <marker date="1544791098602" expanded="true" signature="130:234" ph="/* The timer is responsible for generating customer ... */" />
-            <marker date="1544791098602" expanded="true" signature="490:615" ph="{...}" />
-            <marker date="1544791098602" expanded="true" signature="634:1188" ph="{...}" />
-            <marker date="1544791098602" expanded="true" signature="660:1185" ph="{...}" />
-            <marker date="1544791098602" expanded="true" signature="714:805" ph="{...}" />
-            <marker date="1544791098602" expanded="true" signature="760:800" ph="{...}" />
-            <marker date="1544791098602" expanded="true" signature="1042:1119" ph="/* Resetting the interval to spawn a new customer after ... */" />
-            <marker date="1544791098602" expanded="true" signature="1218:1328" ph="{...}" />
-            <marker date="1544791098602" expanded="true" signature="1258:1281" ph="{...}" />
-            <marker date="1544791098602" expanded="true" signature="1288:1325" ph="{...}" />
+            <marker date="1544832235638" expanded="false" signature="6:78" ph="..." />
+            <marker date="1544832235638" expanded="true" signature="127:1348" ph="{...}" />
+            <marker date="1544832235638" expanded="true" signature="130:234" ph="/* The timer is responsible for generating customer ... */" />
+            <marker date="1544832235638" expanded="true" signature="524:633" ph="{...}" />
+            <marker date="1544832235638" expanded="true" signature="652:1206" ph="{...}" />
+            <marker date="1544832235638" expanded="true" signature="678:1203" ph="{...}" />
+            <marker date="1544832235638" expanded="true" signature="732:823" ph="{...}" />
+            <marker date="1544832235638" expanded="true" signature="778:818" ph="{...}" />
+            <marker date="1544832235638" expanded="true" signature="1060:1137" ph="/* Resetting the interval to spawn a new customer after ... */" />
+            <marker date="1544832235638" expanded="true" signature="1236:1346" ph="{...}" />
+            <marker date="1544832235638" expanded="true" signature="1276:1299" ph="{...}" />
+            <marker date="1544832235638" expanded="true" signature="1306:1343" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CustomerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+          <folding>
+            <marker date="1544836250729" expanded="false" signature="6:78" ph="..." />
+            <marker date="1544836250729" expanded="true" signature="149:2320" ph="{...}" />
+            <marker date="1544836250729" expanded="true" signature="438:1003" ph="{...}" />
+            <marker date="1544836250729" expanded="true" signature="798:908" ph="/* We want the speech bubble to be visible only once the customer ... */" />
+            <marker date="1544836250729" expanded="true" signature="1022:1940" ph="{...}" />
+            <marker date="1544836250729" expanded="true" signature="1039:1369" ph="{...}" />
+            <marker date="1544836250729" expanded="true" signature="1047:1237" ph="/* We save the new vector3 position to the transform, thats why ... */" />
+            <marker date="1544836250729" expanded="true" signature="1450:1541" ph="{...}" />
+            <marker date="1544836250729" expanded="true" signature="1569:1937" ph="{...}" />
+            <marker date="1544836250729" expanded="true" signature="1655:1933" ph="/* For some reason the x axis of the speechbubble flips once it ... */" />
+            <marker date="1544836250729" expanded="true" signature="1943:2041" ph="/* You can use this if you want to make the customers teleport ... */" />
+            <marker date="1544836250729" expanded="true" signature="2068:2318" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -10,12 +10,16 @@ public class CustomerGenerator : MonoBehaviour {
 	[SerializeField] private GameObject[] _spotsForSitting;
 	public static GameObject AvailableSeat;
 	private bool _canCustomerSpawn = false;
+
+	public GameObject PlayerPrefab;
 	
 	public AudioSource AudioSource;
 	
 	void Start ()
 	{
-		Timer = Random.Range(3, 4);
+		Instantiate(PlayerPrefab);
+		
+		Timer = Random.Range(4, 5);
 		InvokeRepeating("DecreaseTime", 0, 1);
 	}
 	
@@ -36,7 +40,7 @@ public class CustomerGenerator : MonoBehaviour {
 			
 			// Resetting the interval to spawn a new customer after
 			// one is spawned.
-			Timer += Random.Range(3, 4);
+			Timer += Random.Range(4, 5);
 			_canCustomerSpawn = false;
 		}
 	}
