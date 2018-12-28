@@ -49,7 +49,6 @@ public class RayShooter : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && hit.transform.name == "NextDialogue")
             {
                 hit.transform.GetComponentInParent<CustomerController>().UpdateDialogueIndex();
-                Debug.Log("mhmh");
             }
 
 			if (Input.GetMouseButton(0) &&

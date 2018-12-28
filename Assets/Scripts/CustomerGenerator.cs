@@ -9,22 +9,23 @@ public class CustomerGenerator : MonoBehaviour {
 	public GameObject CustomerPrefab;
 	[SerializeField] private GameObject[] _spotsForSitting;
 	public static GameObject AvailableSeat;
-	private bool _canCustomerSpawn = false;
+	public bool CanCustomerSpawn = true;
 
 	public GameObject PlayerPrefab;
 	
 	public AudioSource AudioSource;
+    public static List<GameObject> ExistingCustomers = new List<GameObject>();
 	
 	void Start ()
 	{
 		Instantiate(PlayerPrefab);
 		
 		Timer = Random.Range(4, 5);
-		InvokeRepeating("DecreaseTime", 0, 1);
+		//InvokeRepeating("DecreaseTime", 0, 1);
 	}
 	
 	void Update () {
-		if (_canCustomerSpawn)
+		if (CanCustomerSpawn)
 		{
 			foreach (GameObject chair in _spotsForSitting)
 			{
@@ -34,27 +35,28 @@ public class CustomerGenerator : MonoBehaviour {
 				}
 			}
 
-            Instantiate(CustomerPrefab, CustomerPrefab.transform.position, Quaternion.identity, AvailableSeat.transform);
+            GameObject newCustomer = Instantiate(CustomerPrefab, CustomerPrefab.transform.position, Quaternion.identity, AvailableSeat.transform);
+            ExistingCustomers.Add(newCustomer);
             // Once a new customer enters the restaurant, we ring the bell                                                                                                            // Once a new customer enters the restaurant, we ring the bell
             AudioSource.PlayOneShot(AudioSource.clip);
 			
 			// Resetting the interval to spawn a new customer after
 			// one is spawned.
 			Timer += Random.Range(4, 5);
-			_canCustomerSpawn = false;
+			CanCustomerSpawn = false;
 		}
 	}
 
 	private void DecreaseTime()
 	{
-		Debug.Log(Timer);
+		//Debug.Log(Timer);
 		if (Timer > 0)
 		{
 			Timer -= 1;
 		}
 		else
 		{
-			_canCustomerSpawn = true;
+			CanCustomerSpawn = true;
 		}
 	}
 }

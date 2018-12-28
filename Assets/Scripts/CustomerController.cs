@@ -21,6 +21,8 @@ public class CustomerController : MonoBehaviour
     public string CustomerName;
     public string dialogueFileName;
     private readonly List<string> dialogueList = new List<string>();
+    public bool HadFirstCoffee = false;
+    public bool HadSecondCoffee = false;
 
     void Start ()
 	{
@@ -76,7 +78,20 @@ public class CustomerController : MonoBehaviour
     public void UpdateDialogueIndex()
     {
         CurrentDialogueIndex++;
-        _speechBubble.text = dialogueList[CurrentDialogueIndex];
+
+        if (CurrentDialogueIndex > dialogueList.Count - 1)
+        {
+            CustomerGenerator.ExistingCustomers.Remove(gameObject);
+            Destroy(gameObject);
+        } else
+        {
+            _speechBubble.text = dialogueList[CurrentDialogueIndex];
+        }
+    }
+
+    public void UpdateDialogueText(string newText)
+    {
+        _speechBubble.text = newText;
     }
 
 	// You can use this if you want to make the customers teleport

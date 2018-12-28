@@ -139,6 +139,21 @@ public class CoffeeMachine : MonoBehaviour
 
 		Instantiate(CoffeeInMaking, CoffeeInMaking.transform.position, Quaternion.identity, spot.transform);
 
+        foreach (GameObject customerName in CustomerGenerator.ExistingCustomers)
+        {
+            if (UiButtonBehaviour.NewestCoffeeName == "Latte" &&
+                customerName.GetComponent<CustomerController>().CustomerName == "Nikolay" &&
+                customerName.GetComponent<CustomerController>().HadFirstCoffee == false)
+            {
+                customerName.GetComponent<CustomerController>().UpdateDialogueText(
+                    "Spasiba, thank you very much <3");
+                
+                Destroy(spot.transform.GetChild(0).gameObject);
+                Destroy(CoffeeInMaking);
+                customerName.GetComponent<CustomerController>().HadFirstCoffee = true;
+            }
+        }
+
 		CoffeeInMaking = null;
 
 		_isFirstStageComplete = false;

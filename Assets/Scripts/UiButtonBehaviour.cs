@@ -19,6 +19,8 @@ public class UiButtonBehaviour : MonoBehaviour {
 	private Image _cafeSelected;
 	private Image _sugarSelected;
 	private Image _creamSelected;
+
+    public static string NewestCoffeeName;
 	
 	void Start () {
 		_playerCamera = GetComponentInChildren<Camera>();
@@ -45,6 +47,8 @@ public class UiButtonBehaviour : MonoBehaviour {
 			    _hit.transform.name == "Cafe 4"))
 			{
 				image.color = Color.green;
+                NewestCoffeeName = _hit.transform.name;
+
 				_hit.transform.name += " S"; // Makes sure that button is (S) Selected.
 				// This helps highlight the button selected
 				_cafeSelected = _hit.transform.gameObject.GetComponent<Image>();
