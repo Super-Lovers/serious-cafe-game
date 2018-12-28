@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class CustomerController : MonoBehaviour
 {
@@ -14,9 +15,17 @@ public class CustomerController : MonoBehaviour
 	private static string[] _coffeeBeverages = {"Latte", "Espresso"};
 
 	private Rigidbody _rb;
-	
-	void Start ()
+    public int CurrentDialogueIndex;
+    public List<string> CustomerDialogue;
+
+    public string CustomerName;
+    public string dialogueFileName;
+    private readonly List<string> dialogueList = new List<string>();
+
+    void Start ()
 	{
+        FormatDialogue(dialogueFileName);
+
 		_rb = GetComponent<Rigidbody>();
 		_speechBubble = GetComponentInChildren<Text>();
 		_playerTransform = GameObject.FindWithTag("Player").transform;
@@ -25,11 +34,11 @@ public class CustomerController : MonoBehaviour
 		currentPos = EnteringRestaurantSpot.transform.position;
 		transform.position = currentPos;
 
-		_speechBubble.text = _coffeeBeverages[Random.Range(0, 2)];
-		
-		// We want the speech bubble to be visible only once the customer
-		// sits down and then decides on his order
-		_speechBubble.transform.parent.gameObject.SetActive(false);
+        _speechBubble.text = dialogueList[CurrentDialogueIndex];
+
+        // We want the speech bubble to be visible only once the customer
+        // sits down and then decides on his order
+        _speechBubble.transform.parent.gameObject.SetActive(false);
 		//Invoke("MoveToSeat", 6f);
 	}
 	
@@ -48,10 +57,12 @@ public class CustomerController : MonoBehaviour
 			_canMove = false;
 			_speechBubble.transform.parent.gameObject.SetActive(true);
 		}
-			
+		
+        /*
 		if (_playerTransform)
 		{
-			_speechBubble.transform.Rotate(_playerTransform.rotation.eulerAngles);
+            _speechBubble.transform.LookAt(_playerTransform);
+            _speechBubble.transform.Rotate(new Vector3(0, _speechBubble.transform.rotation.y * -1, 0));
 			
 			// For some reason the x axis of the speechbubble flips once it
 			// turns to the player, so im flipipng it back...
@@ -59,7 +70,14 @@ public class CustomerController : MonoBehaviour
 			//speechBubbleScale.x *= -1;
 			//_speechBubble.transform.localScale = speechBubbleScale;
 		}
+        */
 	}
+
+    public void UpdateDialogueIndex()
+    {
+        CurrentDialogueIndex++;
+        _speechBubble.text = dialogueList[CurrentDialogueIndex];
+    }
 
 	// You can use this if you want to make the customers teleport
 	// instead of walk to their seats.
@@ -71,5 +89,23 @@ public class CustomerController : MonoBehaviour
 
 		// Stop moving in that direction if you are already in your seat.
 		Debug.Log("Moved to seat");
-	}
+    }
+
+    private void FormatDialogue(string dialogueFileString)
+    {
+        StreamReader file = new StreamReader(
+            Application.dataPath + "/StreamingAssets/" +
+            dialogueFileName + ".txt");
+
+        using (file)
+        {
+            string line = file.ReadLine();
+
+            while (line != null)
+            {
+                dialogueList.Add(line);
+                line = file.ReadLine();
+            }
+        }
+    }
 }

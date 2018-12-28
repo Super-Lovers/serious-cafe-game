@@ -177,7 +177,7 @@ public class CoffeeMachine : MonoBehaviour
 		_isFirstStageComplete = true;
 		
 		// Once the milk has been successfully prepared in the cup,
-		// we have to instantiate it and show it to the user.
+		// we hav	e to instantiate it and show it to the user.
 		_liquidInCup = Instantiate(LiquidInCupPrefab, CoffeeInMaking.transform.position, Quaternion.identity,
 			// The cup is a child of the latte empty object, so we get the child as the liquid's parent instead
 			CoffeeInMaking.transform.GetChild(0).transform);

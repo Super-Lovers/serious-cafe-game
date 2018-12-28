@@ -33,10 +33,10 @@ public class CustomerGenerator : MonoBehaviour {
 					AvailableSeat = chair;
 				}
 			}
-			
-			Instantiate(CustomerPrefab, CustomerPrefab.transform.position, Quaternion.identity, AvailableSeat.transform);
-			// Once a new customer enters the restaurant, we ring the bell
-			AudioSource.PlayOneShot(AudioSource.clip);
+
+            Instantiate(CustomerPrefab, CustomerPrefab.transform.position, Quaternion.identity, AvailableSeat.transform);
+            // Once a new customer enters the restaurant, we ring the bell                                                                                                            // Once a new customer enters the restaurant, we ring the bell
+            AudioSource.PlayOneShot(AudioSource.clip);
 			
 			// Resetting the interval to spawn a new customer after
 			// one is spawned.
