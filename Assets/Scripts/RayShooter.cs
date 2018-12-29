@@ -46,7 +46,8 @@ public class RayShooter : MonoBehaviour
 				hit.transform.GetComponent<ButtonController>().HighlightButton();
 			}
 
-            if (Input.GetMouseButtonDown(0) && hit.transform.name == "NextDialogue")
+            if (Input.GetMouseButtonDown(0) && hit.transform.name == "NextDialogue" &&
+                hit.transform.GetComponentInParent<CustomerController>().IsDialogueLoaded)
             {
                 hit.transform.GetComponentInParent<CustomerController>().UpdateDialogueIndex();
             }

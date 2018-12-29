@@ -23,6 +23,7 @@ public class CustomerController : MonoBehaviour
     private readonly List<string> dialogueList = new List<string>();
     public bool HadFirstCoffee = false;
     public bool HadSecondCoffee = false;
+    public bool IsDialogueLoaded = true;
 
     void Start ()
 	{
@@ -36,7 +37,9 @@ public class CustomerController : MonoBehaviour
 		currentPos = EnteringRestaurantSpot.transform.position;
 		transform.position = currentPos;
 
-        _speechBubble.text = dialogueList[CurrentDialogueIndex];
+        // Resets the current dialogue bubble for the new one.
+        _speechBubble.text = "";
+        StartCoroutine(UpdateDialogueText(dialogueList[CurrentDialogueIndex]));
 
         // We want the speech bubble to be visible only once the customer
         // sits down and then decides on his order
@@ -77,21 +80,33 @@ public class CustomerController : MonoBehaviour
 
     public void UpdateDialogueIndex()
     {
+        _speechBubble.text = "";
         CurrentDialogueIndex++;
 
         if (CurrentDialogueIndex > dialogueList.Count - 1)
         {
             CustomerGenerator.ExistingCustomers.Remove(gameObject);
+            IsDialogueLoaded = true;
+
             Destroy(gameObject);
         } else
         {
-            _speechBubble.text = dialogueList[CurrentDialogueIndex];
+            StartCoroutine(UpdateDialogueText(dialogueList[CurrentDialogueIndex]));
         }
+
+        IsDialogueLoaded = false;
     }
 
-    public void UpdateDialogueText(string newText)
+    public IEnumerator UpdateDialogueText(string newText)
     {
-        _speechBubble.text = newText;
+        foreach (char symbol in newText)
+        {
+            yield return new WaitForSeconds(0.02f);
+            _speechBubble.text += symbol;
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        IsDialogueLoaded = true;
     }
 
 	// You can use this if you want to make the customers teleport
