@@ -48,6 +48,7 @@ public class UiButtonBehaviour : MonoBehaviour {
 			{
 				image.color = Color.green;
                 NewestCoffeeName = _hit.transform.name;
+                //Debug.Log(NewestCoffeeName);
 
 				_hit.transform.name += " S"; // Makes sure that button is (S) Selected.
 				// This helps highlight the button selected

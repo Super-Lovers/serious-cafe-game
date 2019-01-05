@@ -145,8 +145,8 @@ public class CoffeeMachine : MonoBehaviour
                 customerName.GetComponent<CustomerController>().CustomerName == "Nikolay" &&
                 customerName.GetComponent<CustomerController>().HadFirstCoffee == false)
             {
-                customerName.GetComponent<CustomerController>().UpdateDialogueText(
-                    "Spasiba, thank you very much <3");
+                StartCoroutine(customerName.GetComponent<CustomerController>().UpdateDialogueText(
+                    "Spasiba, thank you very much <3"));
                 
                 Destroy(spot.transform.GetChild(0).gameObject);
                 Destroy(CoffeeInMaking);

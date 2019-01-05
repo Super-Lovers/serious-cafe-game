@@ -14,20 +14,24 @@ public class RayShooter : MonoBehaviour
 	public Material ClickedButton;
 	public static bool EnteredButton = false;
 	private bool _isButtonClicked = false;
-
-	public Text RadioLabel;
+    
 	private int _currentRadioIndex = 0;
 	private int _currentSongIndex = 0;
 	private readonly string[] _radioChannels = {"Channel 1", "Channel 2"};
-	public AudioSource RadioAudioSource;
-	public AudioClip[] Channel1Music;
+	private AudioSource _radioAudioSource;
+    private Text _radioLabel;
+    public AudioClip[] Channel1Music;
 	public AudioClip[] Channel2Music;
 	private List<int> _playedSongsIndexes = new List<int>();
 	
 	void Start ()
 	{
 		_playerCamera = GetComponentInChildren<Camera>();
-	}
+        _radioAudioSource = GameObject.FindGameObjectWithTag("Radio")
+            .GetComponentInChildren<AudioSource>();
+        _radioLabel = GameObject.FindGameObjectWithTag("Radio")
+            .GetComponentInChildren<Text>();
+    }
 	
 	void Update () {
 		// Shotting a ray from the center of the camera, where the player is looking at
@@ -89,16 +93,16 @@ public class RayShooter : MonoBehaviour
 				{
 					_currentRadioIndex++;
 				}
-				RadioLabel.text = _radioChannels[_currentRadioIndex];
+				_radioLabel.text = _radioChannels[_currentRadioIndex];
 				
 				if (_radioChannels[_currentRadioIndex] == "Channel 1")
 				{
-					RadioAudioSource.clip = Channel1Music[newSongIndex];
+					_radioAudioSource.clip = Channel1Music[newSongIndex];
 				} else if (_radioChannels[_currentRadioIndex] == "Channel 2")
 				{
-					RadioAudioSource.clip = Channel2Music[newSongIndex];
+					_radioAudioSource.clip = Channel2Music[newSongIndex];
 				}
-				RadioAudioSource.Play();
+				_radioAudioSource.Play();
 			} else if (Input.GetMouseButtonDown(0) &&
 			           hit.transform.name == "Previous Channel")
 			{
@@ -118,26 +122,26 @@ public class RayShooter : MonoBehaviour
 				{
 					_currentRadioIndex--;
 				}
-				RadioLabel.text = _radioChannels[_currentRadioIndex];
+				_radioLabel.text = _radioChannels[_currentRadioIndex];
 				
 				if (_radioChannels[_currentRadioIndex] == "Channel 1")
 				{
-					RadioAudioSource.clip = Channel1Music[newSongIndex];
+					_radioAudioSource.clip = Channel1Music[newSongIndex];
 				} else if (_radioChannels[_currentRadioIndex] == "Channel 2")
 				{
-					RadioAudioSource.clip = Channel2Music[newSongIndex];
+					_radioAudioSource.clip = Channel2Music[newSongIndex];
 				}
-				RadioAudioSource.Play();
+				_radioAudioSource.Play();
 			} else if (Input.GetMouseButtonDown(0) &&
 			           hit.transform.name == "Volume Down" &&
-			           RadioAudioSource.volume > 0.0f)
+			           _radioAudioSource.volume > 0.0f)
 			{
-				RadioAudioSource.volume -= 0.1f;
+				_radioAudioSource.volume -= 0.1f;
 			} else if (Input.GetMouseButtonDown(0) &&
 			           hit.transform.name == "Volume Up" &&
-			           RadioAudioSource.volume <= 1f)
+			           _radioAudioSource.volume <= 1f)
 			{
-				RadioAudioSource.volume += 0.1f;
+				_radioAudioSource.volume += 0.1f;
 			}
 		}
 		else
@@ -154,7 +158,7 @@ public class RayShooter : MonoBehaviour
 			}
 		}
 
-		if (RadioAudioSource.isPlaying == false)
+		if (_radioAudioSource.isPlaying == false)
 		{
 			// This makes sure we dont play a song in the array
 			// that does not exist
@@ -181,21 +185,21 @@ public class RayShooter : MonoBehaviour
 			// playing relative to the channel as well.
 			if (_radioChannels[_currentRadioIndex] == "Channel 1")
 			{
-				RadioAudioSource.clip = Channel1Music[_currentSongIndex];
+				_radioAudioSource.clip = Channel1Music[_currentSongIndex];
 				//Debug.Log("Current song: " + Channel1Music[_currentSongIndex]);
 			} else if (_radioChannels[_currentRadioIndex] == "Channel 2")
 			{
-				RadioAudioSource.clip = Channel2Music[_currentSongIndex];
+				_radioAudioSource.clip = Channel2Music[_currentSongIndex];
 				//Debug.Log("Current song: " + Channel2Music[_currentSongIndex]);
 			}
-			RadioAudioSource.Play();
+			_radioAudioSource.Play();
 		}
 
 		// Used for testing if the clip is properly started once
 		// the current one is complete
 		if (Input.GetKeyDown(KeyCode.K))
 		{
-			RadioAudioSource.clip.UnloadAudioData();
+			_radioAudioSource.clip.UnloadAudioData();
 		}
 	}
 }

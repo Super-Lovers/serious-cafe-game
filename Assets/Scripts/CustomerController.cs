@@ -9,6 +9,7 @@ public class CustomerController : MonoBehaviour
 	public GameObject ReceiveOrderSpot;
 	public GameObject EnteringRestaurantSpot;
 	private Transform _playerTransform;
+    private AudioSource _audioSource;
 	private bool _canMove = true;
 
 	private Text _speechBubble;
@@ -16,7 +17,7 @@ public class CustomerController : MonoBehaviour
 
 	private Rigidbody _rb;
     public int CurrentDialogueIndex;
-    public List<string> CustomerDialogue;
+    //public List<string> CustomerDialogue;
 
     public string CustomerName;
     public string dialogueFileName;
@@ -30,6 +31,7 @@ public class CustomerController : MonoBehaviour
         FormatDialogue(dialogueFileName);
 
 		_rb = GetComponent<Rigidbody>();
+        _audioSource = GetComponent<AudioSource>();
 		_speechBubble = GetComponentInChildren<Text>();
 		_playerTransform = GameObject.FindWithTag("Player").transform;
 		
@@ -80,6 +82,7 @@ public class CustomerController : MonoBehaviour
 
     public void UpdateDialogueIndex()
     {
+        _audioSource.enabled = true;
         _speechBubble.text = "";
         CurrentDialogueIndex++;
 
@@ -99,6 +102,8 @@ public class CustomerController : MonoBehaviour
 
     public IEnumerator UpdateDialogueText(string newText)
     {
+        _speechBubble.text = "";
+        //Debug.Log("Updating dialogue text");
         foreach (char symbol in newText)
         {
             yield return new WaitForSeconds(0.02f);
@@ -106,6 +111,7 @@ public class CustomerController : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
 
+        _audioSource.enabled = false;
         IsDialogueLoaded = true;
     }
 
