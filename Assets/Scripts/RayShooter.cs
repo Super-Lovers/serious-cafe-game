@@ -23,14 +23,28 @@ public class RayShooter : MonoBehaviour
     public AudioClip[] Channel1Music;
 	public AudioClip[] Channel2Music;
 	private List<int> _playedSongsIndexes = new List<int>();
-	
-	void Start ()
+    private GameObject[] LampLights;
+    public static bool AreLightsOn = false;
+    private List<GameObject> _buttons = new List<GameObject>();
+
+    void Start ()
 	{
 		_playerCamera = GetComponentInChildren<Camera>();
         _radioAudioSource = GameObject.FindGameObjectWithTag("Radio")
             .GetComponentInChildren<AudioSource>();
         _radioLabel = GameObject.FindGameObjectWithTag("Radio")
             .GetComponentInChildren<Text>();
+
+        // Storing all the lights in the level for toggling
+        // with the button
+        LampLights = GameObject.FindGameObjectWithTag("TimeController")
+            .GetComponent<TimeController>().LampLights;
+
+        _buttons.Add(GameObject.Find("Next Channel"));
+        _buttons.Add(GameObject.Find("Previous Channel"));
+        _buttons.Add(GameObject.Find("Volume Up"));
+        _buttons.Add(GameObject.Find("Volume Down"));
+        _buttons.Add(GameObject.Find("Toggle Lights"));
     }
 	
 	void Update () {
@@ -45,10 +59,23 @@ public class RayShooter : MonoBehaviour
 			if (hit.transform.name == "Previous Channel" ||
 			    hit.transform.name == "Next Channel" ||
 			    hit.transform.name == "Volume Down" ||
-			    hit.transform.name == "Volume Up" && _isButtonClicked == false)
+			    hit.transform.name == "Volume Up" ||
+                hit.transform.name == "Toggle Lights" && _isButtonClicked == false)
 			{
 				hit.transform.GetComponent<ButtonController>().HighlightButton();
 			}
+
+            if (Input.GetMouseButtonDown(0) && 
+                hit.transform.name == "Toggle Lights" &&
+                _isButtonClicked == false)
+            {
+                foreach (GameObject lamp in LampLights)
+                {
+                    AreLightsOn = !AreLightsOn;
+                    lamp.SetActive(AreLightsOn);
+                }
+                Debug.Log(AreLightsOn);
+            }
 
             if (Input.GetMouseButtonDown(0) && hit.transform.name == "NextDialogue" &&
                 hit.transform.GetComponentInParent<CustomerController>().IsDialogueLoaded)
@@ -60,7 +87,8 @@ public class RayShooter : MonoBehaviour
 			    (hit.transform.name == "Previous Channel" ||
 				 hit.transform.name == "Next Channel" ||
 			     hit.transform.name == "Volume Down" ||
-			     hit.transform.name == "Volume Up"))
+			     hit.transform.name == "Volume Up" ||
+                 hit.transform.name == "Toggle Lights"))
 			{
 				interactableRenderer.material = ClickedButton;
 				_currentSongIndex = 0;
@@ -146,13 +174,7 @@ public class RayShooter : MonoBehaviour
 		}
 		else
 		{
-			List<GameObject> buttons = new List<GameObject>();
-			buttons.Add(GameObject.Find("Next Channel"));
-			buttons.Add(GameObject.Find("Previous Channel"));
-			buttons.Add(GameObject.Find("Volume Up"));
-			buttons.Add(GameObject.Find("Volume Down"));
-
-			foreach (GameObject button in buttons)
+            foreach (GameObject button in _buttons)
 			{
 				button.GetComponent<MeshRenderer>().material = DefaultButtonMaterial;
 			}

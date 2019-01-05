@@ -6,7 +6,7 @@ using UnityEngine;
 public class TimeController : MonoBehaviour
 {
 	public GameObject[] LampLights;
-	public GameObject SunRays;
+	public GameObject[] SunMoonRays;
 	
 	void Update ()
 	{
@@ -23,17 +23,33 @@ public class TimeController : MonoBehaviour
 				lamp.SetActive(false);
 			}
 			
-			SunRays.GetComponent<Light>().color = new Color32(0x0FF, 0x0C4, 0x070, 0x00);
-		}
+            foreach (GameObject ray in SunMoonRays)
+            {
+                ray.GetComponent<Light>().color = new Color32(0x0FF, 0x0C4, 0x070, 0x00);
+                ray.GetComponent<Light>().intensity = 1.8f;
+            }
+        }
 		else // Night Time
 		{
-			foreach (GameObject lamp in LampLights)
-			{
-				lamp.SetActive(true);
-			}
-			
-			SunRays.GetComponent<Light>().color = new Color32(0x000, 0x009, 0x076, 0x00);
-		}
-
+            if (RayShooter.AreLightsOn == false)
+            {
+                foreach (GameObject lamp in LampLights)
+                {
+                    lamp.SetActive(true);
+                }
+            } else
+            {
+                foreach (GameObject lamp in LampLights)
+                {
+                    lamp.SetActive(false);
+                }
+            }
+            
+            foreach (GameObject ray in SunMoonRays)
+            {
+                ray.GetComponent<Light>().color = new Color32(0x000, 0x009, 0x076, 0x00);
+                ray.GetComponent<Light>().intensity = 3.8f;
+            }
+        }
 	}
 }

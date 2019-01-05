@@ -446,7 +446,6 @@ MonoBehaviour:
   EnteringRestaurantSpot: {fileID: 1505484649476894, guid: 15c37daa4183f514cb88c348837c0930,
     type: 2}
   CurrentDialogueIndex: 0
-  CustomerDialogue: []
   CustomerName: Nikolay
   dialogueFileName: nikolay
   HadFirstCoffee: 0
@@ -540,7 +539,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1527979994064690}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 0, z: -0.24}
   m_LocalScale: {x: 0.0005, y: 0.0005, z: 0.0005}
   m_Children:
@@ -549,10 +548,10 @@ RectTransform:
   - {fileID: 224651412665906624}
   m_Father: {fileID: 4303858525987124}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.462}
+  m_AnchoredPosition: {x: 0, y: 0.65}
   m_SizeDelta: {x: 1600, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224320058201465076

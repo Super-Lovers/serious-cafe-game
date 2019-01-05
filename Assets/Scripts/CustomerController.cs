@@ -102,6 +102,7 @@ public class CustomerController : MonoBehaviour
 
     public IEnumerator UpdateDialogueText(string newText)
     {
+        _audioSource.enabled = true;
         _speechBubble.text = "";
         //Debug.Log("Updating dialogue text");
         foreach (char symbol in newText)
