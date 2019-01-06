@@ -9,6 +9,8 @@ TagManager:
   - Radio
   - LightSource
   - TimeController
+  - ButtonsController
+  - Customer
   layers:
   - Default
   - TransparentFX
