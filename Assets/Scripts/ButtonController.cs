@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour {
     public Material HoveredButton;
     public GameObject EscapeMenu;
     public GameObject OptionsMenu;
+    public AudioSource BackgroundMusic;
     public static bool IsEscapeMenuVisible = false;
     private bool _isOptionsMenuVisible = false;
 
@@ -26,13 +28,23 @@ public class ButtonController : MonoBehaviour {
 
     public void BackToMainMenu()
     {
-        Debug.Log("Back to Main Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void ShowOptionsMenu()
     {
         _isOptionsMenuVisible = !_isOptionsMenuVisible;
         OptionsMenu.SetActive(_isOptionsMenuVisible);
+    }
+
+    public void StartTheGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void QuitTheGame()
+    {
+        Application.Quit();
     }
 
     public void UpdateVolume()
@@ -47,6 +59,16 @@ public class ButtonController : MonoBehaviour {
 
         switch (nameOfClickedButton)
         {
+            case "Background Volume":
+                if (nameOfVolumeSetting == "Increase")
+                {
+                    BackgroundMusic.volume += 0.1f;
+                }
+                else
+                {
+                    BackgroundMusic.volume -= 0.1f;
+                }
+                break;
             case "Rain Volume":
                 if (nameOfVolumeSetting == "Increase")
                 {

@@ -18,10 +18,19 @@ public class TimeController : MonoBehaviour
 		// Updating the light rays and lamps depending on the time of day
 		if (currentHour24 > 8 && currentHour24 < 18) // Day Time
 		{
-			foreach (GameObject lamp in LampLights)
-			{
-				lamp.SetActive(false);
-			}
+			if (RayShooter.AreLightsOn)
+            {
+                foreach (GameObject lamp in LampLights)
+                {
+                    lamp.SetActive(true);
+                }
+            } else
+            {
+                foreach (GameObject lamp in LampLights)
+                {
+                    lamp.SetActive(false);
+                }
+            }
 			
             foreach (GameObject ray in SunMoonRays)
             {

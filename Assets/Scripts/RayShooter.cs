@@ -74,7 +74,7 @@ public class RayShooter : MonoBehaviour
                     AreLightsOn = !AreLightsOn;
                     lamp.SetActive(AreLightsOn);
                 }
-                Debug.Log(AreLightsOn);
+                //Debug.Log(AreLightsOn);
             }
 
             if (Input.GetMouseButtonDown(0) && hit.transform.name == "NextDialogue" &&
