@@ -23,9 +23,9 @@ TagManager:
   - PostProcessing
   - Interactable
   - Button
-  - 
-  - 
-  - 
+  - Base
+  - PrimarySecondary
+  - CupSize
   - 
   - 
   - 

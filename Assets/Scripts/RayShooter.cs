@@ -9,7 +9,7 @@ public class RayShooter : MonoBehaviour
 {
 	private Camera _playerCamera;
 	public LayerMask InteractablesLayer;
-	public Material DefaultButtonMaterial;
+    public Material DefaultButtonMaterial;
 
 	public Material ClickedButton;
 	public static bool EnteredButton = false;

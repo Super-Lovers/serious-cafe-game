@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 114016255047933310}
   - component: {fileID: 114090263777742232}
   - component: {fileID: 114351854519171512}
+  - component: {fileID: 114052339512297886}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -220,6 +221,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraSensitivity: 5
   MovementSpeed: 0.05
+--- !u!114 &114052339512297886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267364262914244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5d049d6daa1a648ab746ca10b9b434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CupSize:
+    serializedVersion: 2
+    m_Bits: 8192
+  BaseLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  PrimaryAndSecondary:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!114 &114090263777742232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,8 +258,6 @@ MonoBehaviour:
   DefaultButtonMaterial: {fileID: 2100000, guid: 920c7afd5ce5ece47b3609b21e0c7179,
     type: 2}
   ClickedButton: {fileID: 2100000, guid: cf9443a6db7383b48aee7a60ae53fafb, type: 2}
-  RadioLabel: {fileID: 0}
-  RadioAudioSource: {fileID: 0}
   Channel1Music:
   - {fileID: 8300000, guid: b69b218a453011f47b22d418edc44ad4, type: 3}
   - {fileID: 8300000, guid: 4a548bad9b90d094c9fa00960c88792d, type: 3}
