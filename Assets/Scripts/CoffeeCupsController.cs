@@ -8,6 +8,9 @@ public class CoffeeCupsController : MonoBehaviour
     public LayerMask CupSize;
     public LayerMask BaseLayer;
     public LayerMask PrimaryAndSecondary;
+    public Material SelectedObjectMaterial;
+    public Material DefaultObjectMaterial;
+    public GameObject ParticlesForSelectables;
 
     private string _phase = string.Empty;
     private string _finalCup = string.Empty;
@@ -16,10 +19,13 @@ public class CoffeeCupsController : MonoBehaviour
     private string _base = string.Empty;
     private string _primaryBase = string.Empty;
     private string _secondaryBase = string.Empty;
+
+    private GameObject _hitObject;
     
     void Start ()
     {
         _playerCamera = GetComponentInChildren<Camera>();
+        ParticlesForSelectables = Instantiate(ParticlesForSelectables);
 
         _phase = "Base";
     }
@@ -32,13 +38,35 @@ public class CoffeeCupsController : MonoBehaviour
         {
             if (_cupSize == string.Empty)
             {
+                // Moving the selection of different phase objects to the
+                // current phase of the coffee-making process.
+                MoveParticlesTo("Cups");
+
                 if (Physics.Raycast(ray, out hit, 100, CupSize))
                 {
-                    GameObject hitObject = hit.collider.gameObject;
+                    // This conditional makes sure that if we enter a new collider
+                    // that we restore the default material on the previous collider
+                    // because if we dont, they both might stay green unless your ray
+                    // exits both of the colliders, not just one.
+                    if (_hitObject != null)
+                    {
+                        _hitObject.GetComponent<MeshRenderer>().material = DefaultObjectMaterial;
+                    }
+                    _hitObject = hit.collider.gameObject;
+                    _hitObject.GetComponent<MeshRenderer>().material = SelectedObjectMaterial;
+
                     if (Input.GetMouseButtonDown(0))
                     {
-                        _cupSize = hitObject.name;
+                        MoveParticlesTo("Base");
+
+                        _cupSize = _hitObject.name;
                         Debug.Log(_cupSize);
+                    }
+                } else
+                {
+                    if (_hitObject != null)
+                    {
+                        _hitObject.GetComponent<MeshRenderer>().material = DefaultObjectMaterial;
                     }
                 }
             }
@@ -48,12 +76,26 @@ public class CoffeeCupsController : MonoBehaviour
                 {
                     if (Physics.Raycast(ray, out hit, 100, BaseLayer))
                     {
-                        GameObject hitObject = hit.collider.gameObject;
+                        if (_hitObject != null)
+                        {
+                            _hitObject.GetComponent<MeshRenderer>().material = DefaultObjectMaterial;
+                        }
+                        _hitObject = hit.collider.gameObject;
+                        _hitObject.GetComponent<MeshRenderer>().material = SelectedObjectMaterial;
+
                         if (Input.GetMouseButtonDown(0))
                         {
-                            _base = hitObject.name;
+                            MoveParticlesTo("Primary and Secondary");
+
+                            _base = _hitObject.name;
                             Debug.Log(_base);
                             _phase = "Primary";
+                        }
+                    } else
+                    {
+                        if (_hitObject != null)
+                        {
+                            _hitObject.GetComponent<MeshRenderer>().material = DefaultObjectMaterial;
                         }
                     }
                 }
@@ -61,18 +103,23 @@ public class CoffeeCupsController : MonoBehaviour
                 {
                     if (Physics.Raycast(ray, out hit, 100, PrimaryAndSecondary))
                     {
-                        GameObject hitObject = hit.collider.gameObject;
+                        if (_hitObject != null)
+                        {
+                            _hitObject.GetComponent<MeshRenderer>().material = DefaultObjectMaterial;
+                        }
+                        _hitObject = hit.collider.gameObject;
+                        _hitObject.GetComponent<MeshRenderer>().material = SelectedObjectMaterial;
 
                         if (Input.GetMouseButtonDown(0))
                         {
                             if (_phase == "Primary")
                             {
-                                _primaryBase = hitObject.name;
+                                _primaryBase = _hitObject.name;
                                 Debug.Log(_primaryBase);
                                 _phase = "Secondary";
                             } else if (_phase == "Secondary")
                             {
-                                _secondaryBase = hitObject.name;
+                                _secondaryBase = _hitObject.name;
                                 Debug.Log(_secondaryBase);
                                 _phase = "Complete";
 
@@ -81,13 +128,36 @@ public class CoffeeCupsController : MonoBehaviour
                                     _primaryBase + " " +
                                     _secondaryBase;
 
+                                MoveParticlesTo("Base");
+
                                 Debug.Log(_phase);
                                 Debug.Log(_finalCup);
+
+                                // Resetting the variables that define a complete order of coffee
+                                // and allow the player to create a new coffee.
+                                _cupSize = string.Empty;
+                                _base = string.Empty;
+                                _primaryBase = string.Empty;
+                                _secondaryBase = string.Empty;
+                                _phase = "Base";
                             }
+                        }
+                    } else
+                    {
+                        if (_hitObject != null)
+                        {
+                            _hitObject.GetComponent<MeshRenderer>().material = DefaultObjectMaterial;
                         }
                     }
                 }
             }
         }
+    }
+
+    private void MoveParticlesTo(string newParentName)
+    {
+        Vector3 ParticlesForSelectablesPosition = ParticlesForSelectables.transform.position;
+        ParticlesForSelectablesPosition = GameObject.Find(newParentName).transform.position;
+        ParticlesForSelectables.transform.position = ParticlesForSelectablesPosition;
     }
 }

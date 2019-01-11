@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
             // as its value relative to the movement position on the screen.
             _mouseY -= Input.GetAxis("Mouse Y");
             float clampedHorizontalRotation = Mathf.Clamp(_mouseX * CameraSensitivity, -70, 70);
-            float clampedVerticalRotation = Mathf.Clamp(_mouseY * CameraSensitivity, -30, 30);
+            float clampedVerticalRotation = Mathf.Clamp(_mouseY * CameraSensitivity, -50, 50);
 
             _playerCamera.transform.localEulerAngles = new Vector3(clampedVerticalRotation, clampedHorizontalRotation, 0);
         } else

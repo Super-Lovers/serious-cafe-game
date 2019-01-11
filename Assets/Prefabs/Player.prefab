@@ -241,6 +241,11 @@ MonoBehaviour:
   PrimaryAndSecondary:
     serializedVersion: 2
     m_Bits: 4096
+  SelectedObjectMaterial: {fileID: 2100000, guid: 54374a513c1a0b74e91610fde8629d75,
+    type: 2}
+  DefaultObjectMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  ParticlesForSelectables: {fileID: 1464612686527592, guid: 1ca7ab77b3e491947b4f9accfa187d36,
+    type: 2}
 --- !u!114 &114090263777742232
 MonoBehaviour:
   m_ObjectHideFlags: 1
