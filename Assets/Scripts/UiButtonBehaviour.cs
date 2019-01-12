@@ -36,6 +36,11 @@ public class UiButtonBehaviour : MonoBehaviour {
         {
             if (_hit.collider.gameObject.name == "Serve")
             {
+                // If the order is to be served, then we remove the 
+                // interface and transfer the coffee to the customer's rest.
+                Destroy(CoffeeCupsController.SpotForNewCoffee);
+
+                GameObject newCustomerCoffee = Instantiate(CoffeeCupsController.SpotForNewCoffee.transform.GetChild(1).gameObject, GameObject.FindGameObjectWithTag("Customer").transform.GetChild(2).transform);
 
             } else if (_hit.collider.gameObject.name == "Reset")
             {

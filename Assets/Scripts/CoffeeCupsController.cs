@@ -10,8 +10,9 @@ public class CoffeeCupsController : MonoBehaviour
     public LayerMask PrimaryAndSecondary;
     public Material SelectedObjectMaterial;
     public Material DefaultObjectMaterial;
+    public Material CupsDefaultObjectMaterial;
     public GameObject ParticlesForSelectables;
-    public GameObject SpotForNewCoffee;
+    public GameObject SpotForNewCoffeePrefab;
 
     private string _phase = string.Empty;
     private string _finalCup = string.Empty;
@@ -37,7 +38,7 @@ public class CoffeeCupsController : MonoBehaviour
     public GameObject PrimarySecondaryCocoa;
     public GameObject PrimarySecondaryCoffee;
 
-    private GameObject _spotForNewCoffee;
+    public static GameObject SpotForNewCoffee;
     private GameObject _hitObject;
     
     void Start ()
@@ -68,7 +69,7 @@ public class CoffeeCupsController : MonoBehaviour
                     // exits both of the colliders, not just one.
                     if (_hitObject != null)
                     {
-                        _hitObject.GetComponent<MeshRenderer>().material = DefaultObjectMaterial;
+                        _hitObject.GetComponent<MeshRenderer>().material = CupsDefaultObjectMaterial;
                     }
                     _hitObject = hit.collider.gameObject;
                     _hitObject.GetComponent<MeshRenderer>().material = SelectedObjectMaterial;
@@ -84,7 +85,7 @@ public class CoffeeCupsController : MonoBehaviour
                 {
                     if (_hitObject != null)
                     {
-                        _hitObject.GetComponent<MeshRenderer>().material = DefaultObjectMaterial;
+                        _hitObject.GetComponent<MeshRenderer>().material = CupsDefaultObjectMaterial;
                     }
                 }
             }
@@ -151,7 +152,7 @@ public class CoffeeCupsController : MonoBehaviour
                                 // This is the prompt for the player when the coffee is
                                 // made and he decides whether or not he wants to hand it
                                 // to the customer or not.
-                                _spotForNewCoffee = Instantiate(SpotForNewCoffee, GameObject.Find("Ingredients").transform);
+                                SpotForNewCoffee = Instantiate(SpotForNewCoffeePrefab, GameObject.Find("Ingredients").transform);
 
                                 InstantiateCoffee();
 
@@ -193,15 +194,15 @@ public class CoffeeCupsController : MonoBehaviour
         // Instantiates the cup
         if (_cupSize == "Small")
         {
-            newCup = Instantiate(SmallCup, _spotForNewCoffee.transform);
+            newCup = Instantiate(SmallCup, SpotForNewCoffee.transform);
         }
         else if (_cupSize == "Medium")
         {
-            newCup = Instantiate(MediumCup, _spotForNewCoffee.transform);
+            newCup = Instantiate(MediumCup, SpotForNewCoffee.transform);
         }
         else if (_cupSize == "Large")
         {
-            newCup = Instantiate(LargeCup, _spotForNewCoffee.transform);
+            newCup = Instantiate(LargeCup, SpotForNewCoffee.transform);
         }
         // We reset the layer because by default we use the cups and ingredients
         // layers to make the coffee, but after we create the final order, we dont want
@@ -212,15 +213,15 @@ public class CoffeeCupsController : MonoBehaviour
         // Instantiates the base
         if (_base == "Milk")
         {
-            newCup = Instantiate(BaseMilk, _spotForNewCoffee.transform.GetChild(1).transform);
+            newCup = Instantiate(BaseMilk, SpotForNewCoffee.transform.GetChild(1).transform);
         }
         else if (_base == "Coffee")
         {
-            newCup = Instantiate(BaseCoffee, _spotForNewCoffee.transform.GetChild(1).transform);
+            newCup = Instantiate(BaseCoffee, SpotForNewCoffee.transform.GetChild(1).transform);
         }
         else if (_base == "Tea")
         {
-            newCup = Instantiate(BaseTea, _spotForNewCoffee.transform.GetChild(1).transform);
+            newCup = Instantiate(BaseTea, SpotForNewCoffee.transform.GetChild(1).transform);
         }
         newCup.layer = 0;
 
@@ -232,7 +233,7 @@ public class CoffeeCupsController : MonoBehaviour
         // Instantiates the secondary ingredients
         InstantiateIngredientsToBase(_secondaryBase);
 
-        _spotForNewCoffee = null;
+        //SpotForNewCoffee = null;
     }
 
     private void InstantiateIngredientsToBase(string newBase)
@@ -241,19 +242,19 @@ public class CoffeeCupsController : MonoBehaviour
         switch (newBase)
         {
             case "Honey":
-                newIngredient = Instantiate(PrimarySecondaryHoney, _spotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
+                newIngredient = Instantiate(PrimarySecondaryHoney, SpotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
                 break;
             case "Lemon":
-                newIngredient = Instantiate(PrimarySecondaryLemon, _spotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
+                newIngredient = Instantiate(PrimarySecondaryLemon, SpotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
                 break;
             case "Mint":
-                newIngredient = Instantiate(PrimarySecondaryMint, _spotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
+                newIngredient = Instantiate(PrimarySecondaryMint, SpotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
                 break;
             case "Cocoa":
-                newIngredient = Instantiate(PrimarySecondaryCocoa, _spotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
+                newIngredient = Instantiate(PrimarySecondaryCocoa, SpotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
                 break;
             case "Coffee":
-                newIngredient = Instantiate(PrimarySecondaryCoffee, _spotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
+                newIngredient = Instantiate(PrimarySecondaryCoffee, SpotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
                 break;
         }
         newIngredient.layer = 0;

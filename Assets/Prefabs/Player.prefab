@@ -244,9 +244,11 @@ MonoBehaviour:
   SelectedObjectMaterial: {fileID: 2100000, guid: 54374a513c1a0b74e91610fde8629d75,
     type: 2}
   DefaultObjectMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  CupsDefaultObjectMaterial: {fileID: 2100000, guid: b16a53e90b248b14aa90e5725dd657d8,
+    type: 2}
   ParticlesForSelectables: {fileID: 1464612686527592, guid: 1ca7ab77b3e491947b4f9accfa187d36,
     type: 2}
-  SpotForNewCoffee: {fileID: 1561472177553030, guid: c40c9d8c27f98ea4681e229d56cce2a8,
+  SpotForNewCoffeePrefab: {fileID: 1561472177553030, guid: c40c9d8c27f98ea4681e229d56cce2a8,
     type: 2}
   SmallCup: {fileID: 1188551567896338, guid: 8d3bd6c3cb6eb464185502736a26fbbf, type: 2}
   MediumCup: {fileID: 1448416017222214, guid: 59b0889fbcf88e645b8ea811a19b148a, type: 2}
