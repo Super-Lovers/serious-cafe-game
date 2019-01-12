@@ -11,6 +11,7 @@ public class CoffeeCupsController : MonoBehaviour
     public Material SelectedObjectMaterial;
     public Material DefaultObjectMaterial;
     public GameObject ParticlesForSelectables;
+    public GameObject SpotForNewCoffee;
 
     private string _phase = string.Empty;
     private string _finalCup = string.Empty;
@@ -20,6 +21,23 @@ public class CoffeeCupsController : MonoBehaviour
     private string _primaryBase = string.Empty;
     private string _secondaryBase = string.Empty;
 
+    // All of the public fields for creating a coffee using
+    // the available cup sizes, base, primary and secondary ingredients.
+    public GameObject SmallCup;
+    public GameObject MediumCup;
+    public GameObject LargeCup;
+
+    public GameObject BaseMilk;
+    public GameObject BaseCoffee;
+    public GameObject BaseTea;
+
+    public GameObject PrimarySecondaryHoney;
+    public GameObject PrimarySecondaryLemon;
+    public GameObject PrimarySecondaryMint;
+    public GameObject PrimarySecondaryCocoa;
+    public GameObject PrimarySecondaryCoffee;
+
+    private GameObject _spotForNewCoffee;
     private GameObject _hitObject;
     
     void Start ()
@@ -130,6 +148,13 @@ public class CoffeeCupsController : MonoBehaviour
 
                                 MoveParticlesTo("Base");
 
+                                // This is the prompt for the player when the coffee is
+                                // made and he decides whether or not he wants to hand it
+                                // to the customer or not.
+                                _spotForNewCoffee = Instantiate(SpotForNewCoffee, GameObject.Find("Ingredients").transform);
+
+                                InstantiateCoffee();
+
                                 Debug.Log(_phase);
                                 Debug.Log(_finalCup);
 
@@ -159,5 +184,78 @@ public class CoffeeCupsController : MonoBehaviour
         Vector3 ParticlesForSelectablesPosition = ParticlesForSelectables.transform.position;
         ParticlesForSelectablesPosition = GameObject.Find(newParentName).transform.position;
         ParticlesForSelectables.transform.position = ParticlesForSelectablesPosition;
+    }
+
+    private void InstantiateCoffee()
+    {
+        GameObject newCup = null;
+        // ***************
+        // Instantiates the cup
+        if (_cupSize == "Small")
+        {
+            newCup = Instantiate(SmallCup, _spotForNewCoffee.transform);
+        }
+        else if (_cupSize == "Medium")
+        {
+            newCup = Instantiate(MediumCup, _spotForNewCoffee.transform);
+        }
+        else if (_cupSize == "Large")
+        {
+            newCup = Instantiate(LargeCup, _spotForNewCoffee.transform);
+        }
+        // We reset the layer because by default we use the cups and ingredients
+        // layers to make the coffee, but after we create the final order, we dont want
+        // to be able to hover over the cup and affect its default materials anymore.
+        newCup.layer = 0;
+
+        // ***************
+        // Instantiates the base
+        if (_base == "Milk")
+        {
+            newCup = Instantiate(BaseMilk, _spotForNewCoffee.transform.GetChild(1).transform);
+        }
+        else if (_base == "Coffee")
+        {
+            newCup = Instantiate(BaseCoffee, _spotForNewCoffee.transform.GetChild(1).transform);
+        }
+        else if (_base == "Tea")
+        {
+            newCup = Instantiate(BaseTea, _spotForNewCoffee.transform.GetChild(1).transform);
+        }
+        newCup.layer = 0;
+
+        // ***************
+        // Instantiates the primary ingredients
+        InstantiateIngredientsToBase(_primaryBase);
+
+        // ***************
+        // Instantiates the secondary ingredients
+        InstantiateIngredientsToBase(_secondaryBase);
+
+        _spotForNewCoffee = null;
+    }
+
+    private void InstantiateIngredientsToBase(string newBase)
+    {
+        GameObject newIngredient = null;
+        switch (newBase)
+        {
+            case "Honey":
+                newIngredient = Instantiate(PrimarySecondaryHoney, _spotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
+                break;
+            case "Lemon":
+                newIngredient = Instantiate(PrimarySecondaryLemon, _spotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
+                break;
+            case "Mint":
+                newIngredient = Instantiate(PrimarySecondaryMint, _spotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
+                break;
+            case "Cocoa":
+                newIngredient = Instantiate(PrimarySecondaryCocoa, _spotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
+                break;
+            case "Coffee":
+                newIngredient = Instantiate(PrimarySecondaryCoffee, _spotForNewCoffee.transform.GetChild(1).transform.GetChild(0).transform);
+                break;
+        }
+        newIngredient.layer = 0;
     }
 }

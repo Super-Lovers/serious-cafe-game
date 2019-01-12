@@ -29,7 +29,23 @@ public class UiButtonBehaviour : MonoBehaviour {
 	void Update () {
 		Ray ray = new Ray(_playerCamera.transform.position, _playerCamera.transform.forward);
 
-		if (Physics.Raycast(ray, out _hit, 100, UiButtonsLayer) &&
+        // ******************************************
+        // This raycast is used for the hand-made coffees
+        if (Physics.Raycast(ray, out _hit, 100, UiButtonsLayer) &&
+            Input.GetMouseButtonDown(0))
+        {
+            if (_hit.collider.gameObject.name == "Serve")
+            {
+
+            } else if (_hit.collider.gameObject.name == "Reset")
+            {
+                Destroy(_hit.collider.gameObject.transform.parent.gameObject.transform.parent.gameObject);
+            }
+        }
+
+        // ******************************************
+        // This raycast is used for the coffee machine
+            if (Physics.Raycast(ray, out _hit, 100, UiButtonsLayer) &&
 		    IsRequestComplete && CoffeeMachine.IsBasketFull == false)
 		{
 			Image image = _hit.transform.GetComponent<Image>();

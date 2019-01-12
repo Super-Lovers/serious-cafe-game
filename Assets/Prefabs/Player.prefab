@@ -246,6 +246,24 @@ MonoBehaviour:
   DefaultObjectMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   ParticlesForSelectables: {fileID: 1464612686527592, guid: 1ca7ab77b3e491947b4f9accfa187d36,
     type: 2}
+  SpotForNewCoffee: {fileID: 1561472177553030, guid: c40c9d8c27f98ea4681e229d56cce2a8,
+    type: 2}
+  SmallCup: {fileID: 1188551567896338, guid: 8d3bd6c3cb6eb464185502736a26fbbf, type: 2}
+  MediumCup: {fileID: 1448416017222214, guid: 59b0889fbcf88e645b8ea811a19b148a, type: 2}
+  LargeCup: {fileID: 1803451786601816, guid: e55cd876ecf33494f9d59f049da4757a, type: 2}
+  BaseMilk: {fileID: 1509570935622162, guid: f68b4f16de4fddd44978438eeb34d3d8, type: 2}
+  BaseCoffee: {fileID: 1042807987320918, guid: 9e1f8889966b2dc469d1b10bd91d74ce, type: 2}
+  BaseTea: {fileID: 1690086905135344, guid: db0aafc438edf494fb584edc4437e77c, type: 2}
+  PrimarySecondaryHoney: {fileID: 1898386180292208, guid: 2ce7e9683c6582e4abed79b12d5a51f6,
+    type: 2}
+  PrimarySecondaryLemon: {fileID: 1204959459528612, guid: 14014c54e93a31a489b84ec5f34eceb1,
+    type: 2}
+  PrimarySecondaryMint: {fileID: 1071299602276420, guid: 0f3641b898d306643be62735dced9488,
+    type: 2}
+  PrimarySecondaryCocoa: {fileID: 1554551770605722, guid: d496f7deee6f93b44a3e531d1012c80c,
+    type: 2}
+  PrimarySecondaryCoffee: {fileID: 1624114488300926, guid: 8b11084944426b744a62a23c6b3059a8,
+    type: 2}
 --- !u!114 &114090263777742232
 MonoBehaviour:
   m_ObjectHideFlags: 1
