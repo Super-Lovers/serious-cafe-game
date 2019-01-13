@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoffeeCupsController : MonoBehaviour
 {
     private Camera _playerCamera;
-    public LayerMask CupSize;
+    public LayerMask CupSizeLayer;
     public LayerMask BaseLayer;
     public LayerMask PrimaryAndSecondary;
     public Material SelectedObjectMaterial;
@@ -15,12 +15,12 @@ public class CoffeeCupsController : MonoBehaviour
     public GameObject SpotForNewCoffeePrefab;
 
     private string _phase = string.Empty;
-    private string _finalCup = string.Empty;
-    
-    private string _cupSize = string.Empty;
-    private string _base = string.Empty;
-    private string _primaryBase = string.Empty;
-    private string _secondaryBase = string.Empty;
+    public static string FinalCup = string.Empty;
+
+    public static string CupSize = string.Empty;
+    public static string Base = string.Empty;
+    public static string PrimaryBase = string.Empty;
+    public static string SecondaryBase = string.Empty;
 
     // All of the public fields for creating a coffee using
     // the available cup sizes, base, primary and secondary ingredients.
@@ -55,13 +55,13 @@ public class CoffeeCupsController : MonoBehaviour
 
         if (_phase != "Complete")
         {
-            if (_cupSize == string.Empty)
+            if (CupSize == string.Empty)
             {
                 // Moving the selection of different phase objects to the
                 // current phase of the coffee-making process.
                 MoveParticlesTo("Cups");
 
-                if (Physics.Raycast(ray, out hit, 100, CupSize))
+                if (Physics.Raycast(ray, out hit, 100, CupSizeLayer))
                 {
                     // This conditional makes sure that if we enter a new collider
                     // that we restore the default material on the previous collider
@@ -78,8 +78,8 @@ public class CoffeeCupsController : MonoBehaviour
                     {
                         MoveParticlesTo("Base");
 
-                        _cupSize = _hitObject.name;
-                        Debug.Log(_cupSize);
+                        CupSize = _hitObject.name;
+                        Debug.Log(CupSize);
                     }
                 } else
                 {
@@ -91,7 +91,7 @@ public class CoffeeCupsController : MonoBehaviour
             }
             else
             {
-                if (_phase == "Base" && _cupSize != string.Empty)
+                if (_phase == "Base" && CupSize != string.Empty)
                 {
                     if (Physics.Raycast(ray, out hit, 100, BaseLayer))
                     {
@@ -106,8 +106,8 @@ public class CoffeeCupsController : MonoBehaviour
                         {
                             MoveParticlesTo("Primary and Secondary");
 
-                            _base = _hitObject.name;
-                            Debug.Log(_base);
+                            Base = _hitObject.name;
+                            Debug.Log(Base);
                             _phase = "Primary";
                         }
                     } else
@@ -133,19 +133,19 @@ public class CoffeeCupsController : MonoBehaviour
                         {
                             if (_phase == "Primary")
                             {
-                                _primaryBase = _hitObject.name;
-                                Debug.Log(_primaryBase);
+                                PrimaryBase = _hitObject.name;
+                                Debug.Log(PrimaryBase);
                                 _phase = "Secondary";
                             } else if (_phase == "Secondary")
                             {
-                                _secondaryBase = _hitObject.name;
-                                Debug.Log(_secondaryBase);
+                                SecondaryBase = _hitObject.name;
+                                Debug.Log(SecondaryBase);
                                 _phase = "Complete";
 
-                                _finalCup = _cupSize + " " +
-                                    _base + " " +
-                                    _primaryBase + " " +
-                                    _secondaryBase;
+                                FinalCup = CupSize + " " +
+                                    Base + " " +
+                                    PrimaryBase + " " +
+                                    SecondaryBase;
 
                                 MoveParticlesTo("Base");
 
@@ -157,14 +157,8 @@ public class CoffeeCupsController : MonoBehaviour
                                 InstantiateCoffee();
 
                                 Debug.Log(_phase);
-                                Debug.Log(_finalCup);
+                                Debug.Log(FinalCup);
 
-                                // Resetting the variables that define a complete order of coffee
-                                // and allow the player to create a new coffee.
-                                _cupSize = string.Empty;
-                                _base = string.Empty;
-                                _primaryBase = string.Empty;
-                                _secondaryBase = string.Empty;
                                 _phase = "Base";
                             }
                         }
@@ -192,15 +186,15 @@ public class CoffeeCupsController : MonoBehaviour
         GameObject newCup = null;
         // ***************
         // Instantiates the cup
-        if (_cupSize == "Small")
+        if (CupSize == "Small")
         {
             newCup = Instantiate(SmallCup, SpotForNewCoffee.transform);
         }
-        else if (_cupSize == "Medium")
+        else if (CupSize == "Medium")
         {
             newCup = Instantiate(MediumCup, SpotForNewCoffee.transform);
         }
-        else if (_cupSize == "Large")
+        else if (CupSize == "Large")
         {
             newCup = Instantiate(LargeCup, SpotForNewCoffee.transform);
         }
@@ -211,15 +205,15 @@ public class CoffeeCupsController : MonoBehaviour
 
         // ***************
         // Instantiates the base
-        if (_base == "Milk")
+        if (Base == "Milk")
         {
             newCup = Instantiate(BaseMilk, SpotForNewCoffee.transform.GetChild(1).transform);
         }
-        else if (_base == "Coffee")
+        else if (Base == "Coffee")
         {
             newCup = Instantiate(BaseCoffee, SpotForNewCoffee.transform.GetChild(1).transform);
         }
-        else if (_base == "Tea")
+        else if (Base == "Tea")
         {
             newCup = Instantiate(BaseTea, SpotForNewCoffee.transform.GetChild(1).transform);
         }
@@ -227,11 +221,11 @@ public class CoffeeCupsController : MonoBehaviour
 
         // ***************
         // Instantiates the primary ingredients
-        InstantiateIngredientsToBase(_primaryBase);
+        InstantiateIngredientsToBase(PrimaryBase);
 
         // ***************
         // Instantiates the secondary ingredients
-        InstantiateIngredientsToBase(_secondaryBase);
+        InstantiateIngredientsToBase(SecondaryBase);
 
         //SpotForNewCoffee = null;
     }

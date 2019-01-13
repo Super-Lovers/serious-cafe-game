@@ -36,11 +36,22 @@ public class UiButtonBehaviour : MonoBehaviour {
         {
             if (_hit.collider.gameObject.name == "Serve")
             {
-                // If the order is to be served, then we remove the 
-                // interface and transfer the coffee to the customer's rest.
-                Destroy(CoffeeCupsController.SpotForNewCoffee);
+                GameObject currentCustomer = GameObject.FindGameObjectWithTag("Customer");
+                CustomerController currentCustomerScript = currentCustomer.GetComponent<CustomerController>(); GameObject.FindGameObjectWithTag("Customer");
 
-                GameObject newCustomerCoffee = Instantiate(CoffeeCupsController.SpotForNewCoffee.transform.GetChild(1).gameObject, GameObject.FindGameObjectWithTag("Customer").transform.GetChild(2).transform);
+                //*******************************
+                // Order template
+                // ******************************
+                // If we reach a specific dialogue message on the customer where he orders a coffee AND his dialogue text is completely loaded AND the correct order combination is met can the dialogue continue forward.
+                if (currentCustomerScript.CurrentDialogueIndex == 2 &&
+                    currentCustomerScript.IsDialogueLoaded &&
+                    CoffeeCupsController.CupSize == "Large" &&
+                    CoffeeCupsController.Base == "Coffee" &&
+                    (CoffeeCupsController.PrimaryBase == "Lemon" ||
+                    CoffeeCupsController.SecondaryBase == "Lemon"))
+                {
+                    ProcessOrderAndReset(currentCustomer);
+                }
 
             } else if (_hit.collider.gameObject.name == "Reset")
             {
@@ -204,4 +215,23 @@ public class UiButtonBehaviour : MonoBehaviour {
 	{
 		IsRequestComplete = true;
 	}
+
+    private void ProcessOrderAndReset(GameObject customerToProcessOrderOf)
+    {
+        // If the order is to be served, then we remove the 
+        // interface and transfer the coffee to the customer's rest.
+        Destroy(CoffeeCupsController.SpotForNewCoffee);
+
+        StartCoroutine(customerToProcessOrderOf.GetComponent<CustomerController>().UpdateDialogueText(
+            "Thank you, friend. You've made it perfectly!"));
+
+        GameObject newCustomerCoffee = Instantiate(CoffeeCupsController.SpotForNewCoffee.transform.GetChild(1).gameObject, GameObject.FindGameObjectWithTag("Customer").transform.GetChild(2).transform);
+
+        // Resetting the variables that define a complete order of coffee
+        // and allow the player to create a new coffee.
+        CoffeeCupsController.CupSize = string.Empty;
+        CoffeeCupsController.Base = string.Empty;
+        CoffeeCupsController.PrimaryBase = string.Empty;
+        CoffeeCupsController.SecondaryBase = string.Empty;
+    }
 }
