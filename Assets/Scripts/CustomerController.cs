@@ -26,6 +26,8 @@ public class CustomerController : MonoBehaviour
     public bool HadSecondCoffee = false;
     public bool IsDialogueLoaded = true;
 
+    public bool IsOrderComplete = true;
+
     void Start ()
 	{
         FormatDialogue(dialogueFileName);
@@ -96,6 +98,12 @@ public class CustomerController : MonoBehaviour
         } else
         {
             StartCoroutine(UpdateDialogueText(dialogueList[CurrentDialogueIndex]));
+        }
+
+        // Once the player reachers a dialogue point where the customer would like to rest and have a coffee, then we must trigger the order functionality that makes impossible to progress until you satisfy the customer with his desired coffee.
+        if (CustomerName == "Nikolay" && CurrentDialogueIndex == 2)
+        {
+            GameObject.FindGameObjectWithTag("Customer").GetComponent<CustomerController>().IsOrderComplete = false;
         }
 
         IsDialogueLoaded = false;

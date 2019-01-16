@@ -77,6 +77,7 @@ public class CoffeeCupsController : MonoBehaviour
                     if (Input.GetMouseButtonDown(0))
                     {
                         MoveParticlesTo("Base");
+                        _phase = "Base";
 
                         CupSize = _hitObject.name;
                         Debug.Log(CupSize);
@@ -147,8 +148,6 @@ public class CoffeeCupsController : MonoBehaviour
                                     PrimaryBase + " " +
                                     SecondaryBase;
 
-                                MoveParticlesTo("Base");
-
                                 // This is the prompt for the player when the coffee is
                                 // made and he decides whether or not he wants to hand it
                                 // to the customer or not.
@@ -156,10 +155,12 @@ public class CoffeeCupsController : MonoBehaviour
 
                                 InstantiateCoffee();
 
+                                MoveParticlesTo("Final Order(Clone)");
+
                                 Debug.Log(_phase);
                                 Debug.Log(FinalCup);
 
-                                _phase = "Base";
+                                _phase = "Cups";
                             }
                         }
                     } else

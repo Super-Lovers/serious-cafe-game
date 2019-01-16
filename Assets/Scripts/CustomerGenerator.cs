@@ -36,6 +36,7 @@ public class CustomerGenerator : MonoBehaviour {
 			}
 
             GameObject newCustomer = Instantiate(CustomerPrefab, CustomerPrefab.transform.position, Quaternion.identity, AvailableSeat.transform);
+            newCustomer.GetComponent<CustomerController>().IsOrderComplete = true;
             ExistingCustomers.Add(newCustomer);
             // Once a new customer enters the restaurant, we ring the bell                                                                                                            // Once a new customer enters the restaurant, we ring the bell
             AudioSource.PlayOneShot(AudioSource.clip);

@@ -31,13 +31,13 @@ public class UiButtonBehaviour : MonoBehaviour {
 
         // ******************************************
         // This raycast is used for the hand-made coffees
-        if (Physics.Raycast(ray, out _hit, 100, UiButtonsLayer) &&
+        if (GameObject.FindGameObjectWithTag("Customer") != null && Physics.Raycast(ray, out _hit, 100, UiButtonsLayer) &&
             Input.GetMouseButtonDown(0))
         {
             if (_hit.collider.gameObject.name == "Serve")
             {
                 GameObject currentCustomer = GameObject.FindGameObjectWithTag("Customer");
-                CustomerController currentCustomerScript = currentCustomer.GetComponent<CustomerController>(); GameObject.FindGameObjectWithTag("Customer");
+                CustomerController currentCustomerScript = currentCustomer.GetComponent<CustomerController>(); 
 
                 //*******************************
                 // Order template
@@ -55,6 +55,7 @@ public class UiButtonBehaviour : MonoBehaviour {
 
             } else if (_hit.collider.gameObject.name == "Reset")
             {
+                ResetPlate();
                 Destroy(_hit.collider.gameObject.transform.parent.gameObject.transform.parent.gameObject);
             }
         }
@@ -229,9 +230,16 @@ public class UiButtonBehaviour : MonoBehaviour {
 
         // Resetting the variables that define a complete order of coffee
         // and allow the player to create a new coffee.
+        GameObject.FindGameObjectWithTag("Customer").GetComponent<CustomerController>().IsOrderComplete = true;
+        ResetPlate();
+    }
+
+    private void ResetPlate()
+    {
         CoffeeCupsController.CupSize = string.Empty;
         CoffeeCupsController.Base = string.Empty;
         CoffeeCupsController.PrimaryBase = string.Empty;
         CoffeeCupsController.SecondaryBase = string.Empty;
+        CoffeeCupsController.FinalCup = string.Empty;
     }
 }

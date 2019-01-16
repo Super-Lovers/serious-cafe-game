@@ -77,7 +77,7 @@ public class RayShooter : MonoBehaviour
                 //Debug.Log(AreLightsOn);
             }
 
-            if (Input.GetMouseButtonDown(0) && hit.transform.name == "NextDialogue" &&
+            if (Input.GetMouseButtonDown(0) && hit.transform.name == "NextDialogue" && GameObject.FindGameObjectWithTag("Customer").GetComponentInParent<CustomerController>().IsOrderComplete &&
                 hit.transform.GetComponentInParent<CustomerController>().IsDialogueLoaded)
             {
                 hit.transform.GetComponentInParent<CustomerController>().UpdateDialogueIndex();
