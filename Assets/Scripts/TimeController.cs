@@ -7,8 +7,14 @@ public class TimeController : MonoBehaviour
 {
 	public GameObject[] LampLights;
 	public GameObject[] SunMoonRays;
-	
-	void Update ()
+    public GameObject DirectionalLight;
+
+    private void Start()
+    {
+        DirectionalLight.SetActive(false);
+    }
+
+    void Update ()
 	{
 		// We get the user's system date format and convert it
 		// to a 24 hour format so that the code can work with it better.
@@ -17,8 +23,9 @@ public class TimeController : MonoBehaviour
 		
 		// Updating the light rays and lamps depending on the time of day
 		if (currentHour24 > 8 && currentHour24 < 18) // Day Time
-		{
-			if (RayShooter.AreLightsOn)
+        {
+            DirectionalLight.SetActive(true);
+            if (RayShooter.AreLightsOn)
             {
                 foreach (GameObject lamp in LampLights)
                 {
@@ -39,7 +46,8 @@ public class TimeController : MonoBehaviour
             }
         }
 		else // Night Time
-		{
+        {
+            DirectionalLight.SetActive(false);
             if (RayShooter.AreLightsOn == false)
             {
                 foreach (GameObject lamp in LampLights)
