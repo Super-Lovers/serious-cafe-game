@@ -39,7 +39,8 @@ public class ButtonController : MonoBehaviour {
 
     public void StartTheGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        GameObject.FindGameObjectWithTag("StoryController").GetComponent<StoryController>().BeginStorySequence();
+        //SceneManager.LoadScene("SampleScene");
     }
 
     public void QuitTheGame()

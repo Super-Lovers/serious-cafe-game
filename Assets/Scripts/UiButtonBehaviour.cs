@@ -93,7 +93,7 @@ public class UiButtonBehaviour : MonoBehaviour {
 			{
 				if (_isCafeSelected == false)
 				{
-					image.color = Color.gray;
+					image.color = Color.blue;
 					_hit.transform.tag = "Hovered";
 					_isHovering = true;
 				}
@@ -117,9 +117,9 @@ public class UiButtonBehaviour : MonoBehaviour {
 			else
 			{
 				if (_isSugarSelected == false && _sugarSelected == null)
-				{
-					image.color = Color.gray;
-					_hit.transform.tag = "Hovered";
+                {
+                    image.color = Color.blue;
+                    _hit.transform.tag = "Hovered";
 					_isHovering = true;
 				}
 			}
@@ -141,9 +141,9 @@ public class UiButtonBehaviour : MonoBehaviour {
 			else
 			{
 				if (_isCafeSelected)
-				{
-					image.color = Color.gray;
-					_hit.transform.tag = "Hovered";
+                {
+                    image.color = Color.blue;
+                    _hit.transform.tag = "Hovered";
 					
 					_isHovering = true;
 				}

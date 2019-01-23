@@ -87,7 +87,7 @@ public class CustomerController : MonoBehaviour
         _audioSource.enabled = true;
         _speechBubble.text = "";
         CurrentDialogueIndex++;
-        Debug.Log(CurrentDialogueIndex);
+        //Debug.Log(CurrentDialogueIndex);
 
         if (CurrentDialogueIndex > dialogueList.Count - 1)
         {
