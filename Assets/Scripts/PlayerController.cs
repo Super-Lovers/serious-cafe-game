@@ -27,24 +27,17 @@ public class PlayerController : MonoBehaviour
         _buttonsController = GameObject.FindGameObjectWithTag("ButtonsController");
 	}
 	
-	void Update ()
+	void FixedUpdate ()
 	{
 		if (_isEscapeButtonPressed == false)
         {
-            // The played must only move to the sides
-            _charController.Move(new Vector3(Input.GetAxis("Horizontal") * MovementSpeed, 0, 0));
-
             // The mouse cursor has to be centered on the screen so that he can interact
             // with objects by looking at them first.
             Cursor.lockState = CursorLockMode.Locked;
 
-            // Here we change AND store the value of the x position, so that
-            // we can change it dynamically and use the stored values so when we
-            // move the camera, it moves relative to its last stored position.
-            _mouseX += Input.GetAxis("Mouse X");
-            // Plus or Minus means the direction of the mouse that its going to increment
-            // as its value relative to the movement position on the screen.
-            _mouseY -= Input.GetAxis("Mouse Y");
+            // The played must only move to the sides
+            _charController.Move(new Vector3(Input.GetAxis("Horizontal") * MovementSpeed, 0, 0));
+
             float clampedHorizontalRotation = Mathf.Clamp(_mouseX * CameraSensitivity, -70, 70);
             float clampedVerticalRotation = Mathf.Clamp(_mouseY * CameraSensitivity, -50, 50);
 
@@ -53,6 +46,17 @@ public class PlayerController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
+    }
+
+    private void Update()
+    {
+        // Here we change AND store the value of the x position, so that
+        // we can change it dynamically and use the stored values so when we
+        // move the camera, it moves relative to its last stored position.
+        _mouseX += Input.GetAxis("Mouse X");
+        // Plus or Minus means the direction of the mouse that its going to increment
+        // as its value relative to the movement position on the screen.
+        _mouseY -= Input.GetAxis("Mouse Y");
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -60,7 +64,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-	private void OnGUI()
+    private void OnGUI()
 	{
 		int labelSize = 50;
 		int positionX = _playerCamera.pixelWidth / 2;

@@ -18,13 +18,25 @@ public class StoryController : MonoBehaviour
     private bool _canPressSpace = false;
 
     public GameObject Notification;
+    public static bool _isLevelOver = false;
 
 	void Start () {
         _backgroundAnimator = BackgroundColor.GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
+
+        Cursor.lockState = CursorLockMode.None;
     }
 	
 	void Update () {
+        if (_isLevelOver)
+        {
+            BackgroundColor.SetActive(true);
+
+            Invoke("ReturnToMainMenu", 1f);
+
+            _isLevelOver = false;
+        }
+
 		if (_isTextLoaded && Input.GetKeyDown(KeyCode.Space)) {
             if (_currentDialogueIndex == DialogueTexts.Length - 1)
             {
@@ -35,6 +47,11 @@ public class StoryController : MonoBehaviour
             }
         }
 	}
+
+    private void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
     public void BeginStorySequence()
     {
@@ -84,7 +101,7 @@ public class StoryController : MonoBehaviour
         }
 
         _currentDialogueIndex++;
-        _isTextLoaded = true;
         _audioSource.Stop();
+        _isTextLoaded = true;
     }
 }

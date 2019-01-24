@@ -284,11 +284,9 @@ MonoBehaviour:
     type: 2}
   ClickedButton: {fileID: 2100000, guid: cf9443a6db7383b48aee7a60ae53fafb, type: 2}
   Channel1Music:
-  - {fileID: 8300000, guid: b69b218a453011f47b22d418edc44ad4, type: 3}
-  - {fileID: 8300000, guid: 4a548bad9b90d094c9fa00960c88792d, type: 3}
+  - {fileID: 8300000, guid: 886ead1b994797e43a9bbf4305da14b1, type: 3}
   Channel2Music:
-  - {fileID: 8300000, guid: 4c6182db21ae64442badf369e3c6fdc4, type: 3}
-  - {fileID: 8300000, guid: a696489e0b5548d4b8d2870f739b3112, type: 3}
+  - {fileID: 8300000, guid: 91b46270f34193645a1fc7f67fb48861, type: 3}
 --- !u!114 &114351854519171512
 MonoBehaviour:
   m_ObjectHideFlags: 1

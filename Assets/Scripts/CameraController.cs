@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour {
         InvokeRepeating("ChangeDirectionOfRotation", 0, 17f);
     }
 
-    void Update () {
+    void FixedUpdate () {
 		if (_changeDirection)
         {
             _camera.transform.Rotate(new Vector3(0, 0.05f, 0));

@@ -94,6 +94,8 @@ public class CustomerController : MonoBehaviour
             CustomerGenerator.ExistingCustomers.Remove(gameObject);
             IsDialogueLoaded = true;
 
+            StoryController._isLevelOver = true;
+
             Destroy(gameObject);
         } else
         {
@@ -111,6 +113,7 @@ public class CustomerController : MonoBehaviour
 
     public IEnumerator UpdateDialogueText(string newText)
     {
+        IsDialogueLoaded = false;
         _audioSource.enabled = true;
         _speechBubble.text = "";
         //Debug.Log("Updating dialogue text");
